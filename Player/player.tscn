@@ -4,18 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://dfrx3f810ooqu" path="res://Player/player_sprites.png" id="2_6okte"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxwo7"]
-radius = 2.0
-height = 14.0
+radius = 3.0
+height = 6.00001
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_7cth1")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -5)
 texture = ExtResource("2_6okte")
 hframes = 4
 vframes = 7
