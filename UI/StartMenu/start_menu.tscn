@@ -15,6 +15,7 @@ func _on_quit_button_pressed():
 "
 
 [node name="StartMenu" type="Control"]
+z_index = 10
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 15
