@@ -30,7 +30,9 @@ func friction():
 		return RUNNIN_FRICTION
 	else:
 		return WALKING_FRICTION
-		
+
+
+
 func _physics_process(delta):
 	var input_vector = Vector2.ZERO
 	

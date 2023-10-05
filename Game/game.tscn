@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=15 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
 [ext_resource type="Texture2D" uid="uid://blhlgx0cxi7ef" path="res://assets/grid/tile__selector.png" id="2_byaqm"]
 [ext_resource type="Texture2D" uid="uid://dcid6qfka3obt" path="res://assets/Tilesets/TilesetNature.png" id="3_m3exg"]
+[ext_resource type="Texture2D" uid="uid://dn5wgmed2poxr" path="res://assets/grid/Walls.png" id="4_fgii8"]
 [ext_resource type="PackedScene" uid="uid://c554rdx5sfkqi" path="res://Player/player.tscn" id="4_oank5"]
 [ext_resource type="PackedScene" uid="uid://di7eng28gg3cc" path="res://UI/PauseMenu/pause_menu.tscn" id="6_edt4b"]
 
@@ -29,11 +30,19 @@ func _process(delta):
 	var hovering_tile_position = tile_map.local_to_map(get_global_mouse_position())
 	tile_map.clear_layer(SELECTOR_LAYER)
 	tile_map.set_cell(SELECTOR_LAYER, hovering_tile_position, ID_SELECTOR_TILE, Vector2i(0,0), 0)
-
-func _input(event):
-	if Input.is_action_just_pressed(\"click\"):
+	
+	if Input.is_action_pressed(\"click\"):
 		var clicked_tile_position = tile_map.local_to_map(get_global_mouse_position())
-		tile_map.set_cell(OBSTACLES_LAYER, clicked_tile_position, ID_NATURE_TILE, ROCK_ATLAS_POSITION, 0)
+		#tile_map.set_cell(OBSTACLES_LAYER, clicked_tile_position, ID_NATURE_TILE, ROCK_ATLAS_POSITION, 0)
+		tile_map.set_cells_terrain_connect(OBSTACLES_LAYER, [clicked_tile_position], 1, 0)
+
+		
+#
+#func _input(event):
+#	if Input.is_action_just_pressed(\"click\"):
+#		var clicked_tile_position = tile_map.local_to_map(get_global_mouse_position())
+#		#tile_map.set_cell(OBSTACLES_LAYER, clicked_tile_position, ID_NATURE_TILE, ROCK_ATLAS_POSITION, 0)
+#		tile_map.set_cells_terrain_connect(OBSTACLES_LAYER, [clicked_tile_position], 1, 0)
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul0e7"]
@@ -1988,6 +1997,137 @@ texture = ExtResource("2_byaqm")
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_17xmc"]
+texture = ExtResource("4_fgii8")
+0:0/0 = 0
+0:0/0/terrain_set = 1
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 8, -2, 8, 2, 2, 2, 2, 8, -2, 8)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 1
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2, 8, -2, 8, 2, 2, 2, 2, 8, -2, 8, -2, 2, -8, 2)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 1
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -2, 2, 8, -2, 8, -2, 2, -8, 2, -8, -2)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+3:0/0 = 0
+3:0/0/terrain_set = 1
+3:0/0/terrain = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, 8, -2, -2, 2, -2, 2, 8)
+3:0/0/terrains_peering_bit/bottom_side = 0
+0:1/0 = 0
+0:1/0/terrain_set = 1
+0:1/0/terrain = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, 8, -2, -8, 2, -8, 2, -2, 8, -2, 8, 2, 2, 2, 2, 8)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 1
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 2, 2.0625, 2, 2, 8, -2, 8, -2, 2, -8, 2, -8, -2, -2, -2, -2, -8, 2, -8, 2, -2, 8, -2)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 1
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -8, 2, 8, -2, 8, -2, 2, -8, 2, -8, -2, -2, -2, -2, -8)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/terrain_set = 1
+3:1/0/terrain = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, 8, -2, -8, 2, -8, 2, 8)
+3:1/0/terrains_peering_bit/bottom_side = 0
+3:1/0/terrains_peering_bit/top_side = 0
+0:2/0 = 0
+0:2/0/terrain_set = 1
+0:2/0/terrain = 0
+0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:2/0/physics_layer_0/angular_velocity = 0.0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, 2, -2, -8, 2, -8, 2, -2, 8, -2, 8, 2)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 1
+1:2/0/terrain = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 2, -8, 2, -8, -2, -2, -2, -2, -8, 2, -8, 2, -2, 8, -2)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 1
+2:2/0/terrain = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, 2, -8, 2, -8, -2, -2, -2, -2, -8, 2, -8)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+0:3/0 = 0
+0:3/0/terrain_set = 1
+0:3/0/terrain = 0
+0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:3/0/physics_layer_0/angular_velocity = 0.0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 2, -2, 2, -2, -2, 8, -2)
+0:3/0/terrains_peering_bit/right_side = 0
+1:3/0 = 0
+1:3/0/terrain_set = 1
+1:3/0/terrain = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2, 8, -2, 8, 2, -8, 2)
+1:3/0/terrains_peering_bit/right_side = 0
+1:3/0/terrains_peering_bit/left_side = 0
+3:3/0 = 0
+3:3/0/terrain_set = 1
+3:3/0/terrain = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -2, 2, 2, -2, 2, -2, -2)
+3:2/0 = 0
+3:2/0/terrain_set = 1
+3:2/0/terrain = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(2, -8, 2, 2, -2, 2, -2, -8)
+3:2/0/terrains_peering_bit/top_side = 0
+2:3/0 = 0
+2:3/0/terrain_set = 1
+2:3/0/terrain = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2, 2, -2, 2, 2, -8, 2)
+2:3/0/terrains_peering_bit/left_side = 0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2osbb"]
 texture = ExtResource("3_m3exg")
 0:0/0 = 0
@@ -3143,36 +3283,16 @@ terrain_set_0/terrain_0/name = "Dust"
 terrain_set_0/terrain_0/color = Color(0.980392, 0.439216, 0.584314, 1)
 terrain_set_0/terrain_1/name = "Rock"
 terrain_set_0/terrain_1/color = Color(0.513726, 0.176471, 0.776471, 1)
+terrain_set_1/mode = 2
+terrain_set_1/terrain_0/name = "Walls"
+terrain_set_1/terrain_0/color = Color(0.121569, 0.341176, 0.807843, 1)
 sources/0 = SubResource("TileSetAtlasSource_ul0e7")
 sources/100 = SubResource("TileSetAtlasSource_5iiny")
 sources/60 = SubResource("TileSetAtlasSource_2osbb")
+sources/4 = SubResource("TileSetAtlasSource_17xmc")
 
 [sub_resource type="GDScript" id="GDScript_yvhwt"]
 script/source = "extends TileMap
-
-var GridSize = 4
-var TILES = {}
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-#	for x in GridSize:
-#		for y in GridSize:
-#			TILES[str(Vector2(x,y))] = {
-#				\"Type\": \"Grass\"
-#			}
-#			set_cell(0, Vector2(x,y), 1, Vector2i(0,0), 0)
-			
-	print(TILES)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-#	var tile = local_to_map(get_global_mouse_position())
-#	var tile_key = str(tile)
-#	if TILES.has(tile_key):
-#		clear_layer(1)
-#		set_cell(1, tile, 0, Vector2i(0,0), 0)
-	
 "
 
 [node name="GameManager" type="Node"]
@@ -3204,7 +3324,7 @@ layer_2/modulate = Color(1, 1, 1, 1)
 layer_2/y_sort_enabled = true
 layer_2/y_sort_origin = 0
 layer_2/z_index = 1
-layer_2/tile_data = PackedInt32Array(65538, 983100, 9, 196611, 983100, 9)
+layer_2/tile_data = PackedInt32Array(65538, 983100, 9, 196611, 983100, 9, 393209, 4, 2, 327673, 196612, 1, 262137, 196612, 1, 196601, 196612, 1, 131065, 196612, 1, 65529, 196612, 1, -7, 196612, 1, -65543, 4, 0, 393212, 131076, 2, 393211, 65540, 3, 393210, 65540, 3, 196604, 196612, 0, 262140, 196612, 1, 327676, 196612, 1, -65542, 65540, 3, -65541, 65540, 3, -65540, 131076, 0, -4, 196612, 1, 65532, 196612, 2)
 layer_3/name = "Selector"
 layer_3/enabled = true
 layer_3/modulate = Color(1, 1, 1, 1)
@@ -3232,5 +3352,6 @@ anchors_preset = 0
 scale = Vector2(0.25, 0.25)
 
 [node name="PauseMenu" parent="World/TileMap/Player/Control" node_paths=PackedStringArray("game_manager") instance=ExtResource("6_edt4b")]
+visible = false
 layout_mode = 1
 game_manager = NodePath("../../../../..")
