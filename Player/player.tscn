@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c554rdx5sfkqi"]
+[gd_scene load_steps=5 format=3 uid="uid://c554rdx5sfkqi"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_7cth1"]
 [ext_resource type="Texture2D" uid="uid://dfrx3f810ooqu" path="res://Player/player_sprites.png" id="2_6okte"]
@@ -7,18 +7,32 @@
 radius = 3.0
 height = 6.00001
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_xlrwb"]
+radius = 5.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_7cth1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Graphics" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
 texture = ExtResource("2_6okte")
 hframes = 4
 vframes = 7
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="HitBox" type="CollisionShape2D" parent="."]
 rotation = -1.5708
 shape = SubResource("CapsuleShape2D_sxwo7")
+
+[node name="TileDetector" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionArea" type="CollisionShape2D" parent="TileDetector"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_xlrwb")
+
+[connection signal="body_shape_entered" from="TileDetector" to="." method="_on_tile_detector_body_shape_entered"]
+[connection signal="body_shape_exited" from="TileDetector" to="." method="_on_tile_detector_body_shape_exited"]

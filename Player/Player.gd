@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var tile_map = $".."
+
 const WALKING_ACCELERATION = 600
 const RUNNIN_ACCELERATION = 1000
 const MAX_WALKING_SPEED = 80
@@ -51,3 +53,17 @@ func _input(event):
 		running = true
 	if event.is_action_released("ui_run"):
 		running = false
+
+
+func _on_tile_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	_handle_under_roof(body_rid, body)
+	
+func _handle_under_roof(body_rid, current_tile_map):
+#	var roof_tile_coords = current_tile_map.get_coords_for_body_rid(body_rid)
+	current_tile_map.hide_roof()
+
+func _on_tile_detector_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	_handle_off_roof(body_rid, body)
+	
+func _handle_off_roof(body_rid, current_tile_map):
+	current_tile_map.show_roof()
