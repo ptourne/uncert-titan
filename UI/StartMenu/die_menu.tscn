@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=3 uid="uid://gj65xfbj2you"]
+
+[ext_resource type="Theme" uid="uid://beobcn5jamo8p" path="res://UI/ui__theme.tres" id="1_a1qe2"]
+[ext_resource type="Texture2D" uid="uid://dgx3yjk13bp4e" path="res://UI/StartMenu/background.png" id="2_xqyir"]
+
+[sub_resource type="GDScript" id="GDScript_xr34l"]
+script/source = "extends Control
+
+
+func _on_start_button_pressed():
+	get_tree().change_scene_to_file(\"res://Game/game.tscn\")
+
+func _on_quit_button_pressed():
+	get_tree().quit()
+"
+
+[node name="StartMenu" type="Control"]
+z_index = 10
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_a1qe2")
+script = SubResource("GDScript_xr34l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xqyir")
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+
+[node name="StartButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "COMENZAR"
+
+[node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "SALIR"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

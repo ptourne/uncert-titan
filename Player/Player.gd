@@ -1,4 +1,7 @@
+class_name Player
+
 extends CharacterBody2D
+signal die(message)
 
 @onready var tile_map = $".."
 
@@ -9,8 +12,11 @@ const MAX_RUNNIN_SPEED = 150
 const MAX_SPEED = 150
 const WALKING_FRICTION = 800
 const RUNNIN_FRICTION = 1200
+const MAX_OXIGEN_LEVEL = 500
 
 var running = false
+var oxigen : int = MAX_OXIGEN_LEVEL
+var is_on_space_suit = false
 
 func is_running():
 	return running
@@ -67,3 +73,11 @@ func _on_tile_detector_body_shape_exited(body_rid, body, body_shape_index, local
 	
 func _handle_off_roof(body_rid, current_tile_map):
 	current_tile_map.show_roof()
+
+func decrease_oxigen_level():
+	oxigen -=1
+
+func _on_breading_timer_timeout():
+	decrease_oxigen_level()
+	if oxigen <= 0:
+		die.emit("Asfixiation")
