@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=24 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://Objects/map.gd" id="9_r7det"]
 [ext_resource type="PackedScene" uid="uid://ctp201hcv0v8r" path="res://UI/DieMenu/die_menu.tscn" id="10_17u5c"]
 [ext_resource type="PackedScene" uid="uid://b24fcyyndoxiy" path="res://Objects/base.tscn" id="11_t1eoa"]
+[ext_resource type="PackedScene" path="res://Game/package_manager.tscn" id="12_883x1"]
 [ext_resource type="PackedScene" uid="uid://bmtf3drba0g5v" path="res://Game/generator_colocator.tscn" id="12_xdehd"]
-[ext_resource type="PackedScene" uid="uid://3esbeagvyup2" path="res://Game/package_manager.tscn" id="12_883x1"]
 [ext_resource type="Script" path="res://Game/deploy_manager.gd" id="13_1mapw"]
 
 [sub_resource type="GDScript" id="GDScript_af865"]
@@ -5551,6 +5551,7 @@ game_manager = NodePath("../../../../..")
 [node name="Base" parent="World" instance=ExtResource("11_t1eoa")]
 
 [node name="GeneratorColocator" parent="World" instance=ExtResource("12_xdehd")]
+
 [node name="PackageManager" parent="World" node_paths=PackedStringArray("deploy_manager") instance=ExtResource("12_883x1")]
 visible = false
 deploy_manager = NodePath("../../DeployManager")
