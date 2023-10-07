@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://3esbeagvyup2"]
+
+[ext_resource type="Script" path="res://Game/package_manager.gd" id="1_jiy5o"]
+[ext_resource type="Script" path="res://Objects/package.gd" id="2_rbnpn"]
+
+[node name="PackageManager" type="Node2D"]
+script = ExtResource("1_jiy5o")
+right_up_pos = Vector2i(10, 10)
+
+[node name="Package" type="Node2D" parent="."]
+script = ExtResource("2_rbnpn")

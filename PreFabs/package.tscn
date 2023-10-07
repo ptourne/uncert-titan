@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpfqhbi5o1ore"]
+
+[ext_resource type="Script" path="res://Objects/package.gd" id="1_jcvy1"]
+
+[node name="Package" type="Node2D"]
+script = ExtResource("1_jcvy1")
+coor = Vector2i(1, 4)
