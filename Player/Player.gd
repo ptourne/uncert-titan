@@ -4,6 +4,7 @@ extends CharacterBody2D
 signal die(message)
 
 @onready var tile_map = $".."
+@export var game_manager : GameManager
 
 const WALKING_ACCELERATION = 600
 const RUNNIN_ACCELERATION = 1000
@@ -12,7 +13,7 @@ const MAX_RUNNIN_SPEED = 150
 const MAX_SPEED = 150
 const WALKING_FRICTION = 800
 const RUNNIN_FRICTION = 1200
-const MAX_OXIGEN_LEVEL = 500
+const MAX_OXIGEN_LEVEL = 100
 
 var running = false
 var oxigen : int = MAX_OXIGEN_LEVEL
@@ -74,10 +75,16 @@ func _on_tile_detector_body_shape_exited(body_rid, body, body_shape_index, local
 func _handle_off_roof(body_rid, current_tile_map):
 	current_tile_map.show_roof()
 
+const OX_COST_PER_VELOCITY = 0.1
+const OX_COST_BASE = 0.01
+func oxigen_toll():
+	return velocity.length() * OX_COST_PER_VELOCITY + OX_COST_BASE
+	
 func decrease_oxigen_level():
-	oxigen -=1
+	oxigen -= oxigen_toll()
 
 func _on_breading_timer_timeout():
 	decrease_oxigen_level()
+	print(oxigen)
 	if oxigen <= 0:
 		die.emit("Asfixiation")

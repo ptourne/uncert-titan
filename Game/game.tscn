@@ -5474,9 +5474,10 @@ func show_roof():
 		set_layer_modulate(layer_ids.roof, Color(1,1,1,1))
 "
 
-[node name="GameManager" type="Node"]
+[node name="GameManager" type="Node" node_paths=PackedStringArray("player")]
 process_mode = 3
 script = ExtResource("1_vsshf")
+player = NodePath("World/TileMap/Player")
 
 [node name="World" type="Node2D" parent="."]
 process_mode = 1
@@ -5534,8 +5535,9 @@ layer_6/z_index = 0
 layer_6/tile_data = PackedInt32Array()
 script = SubResource("GDScript_yvhwt")
 
-[node name="Player" parent="World/TileMap" instance=ExtResource("4_oank5")]
+[node name="Player" parent="World/TileMap" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_oank5")]
 position = Vector2(78, -4)
+game_manager = NodePath("../../..")
 
 [node name="Camera2D" type="Camera2D" parent="World/TileMap/Player"]
 zoom = Vector2(4, 4)

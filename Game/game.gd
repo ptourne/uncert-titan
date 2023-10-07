@@ -15,7 +15,7 @@ var game_paused: bool = false:
 		emit_signal("toggle_game_paused", game_paused)
 
 func _ready():
-	player.connect("toggle_game_paused", _die)
+	player.connect("die", _die)
 
 func _die(message):
 	print(message)
