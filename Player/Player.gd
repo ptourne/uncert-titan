@@ -25,6 +25,8 @@ var energy : int = 0
 var is_on_space_suit = false
 var in_base = false
 
+func _process(delta):
+	pass
 	
 func is_running():
 	return running
@@ -94,7 +96,6 @@ func decrease_oxigen_level():
 
 func _on_breading_timer_timeout():
 	decrease_oxigen_level()
-	print(oxigen)
 	if oxigen <= 0:
 		die.emit("Asfixiation")
 
