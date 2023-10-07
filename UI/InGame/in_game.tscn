@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://cmrrhy57enq3j"]
+[gd_scene load_steps=4 format=3 uid="uid://cmrrhy57enq3j"]
+
+[ext_resource type="Texture2D" uid="uid://djqnnieyh8f8v" path="res://assets/UI/InGame/OnTopScreen/radar.png" id="1_bep8t"]
+[ext_resource type="Theme" uid="uid://beobcn5jamo8p" path="res://UI/ui__theme.tres" id="1_jwvoe"]
+[ext_resource type="Texture2D" uid="uid://c3jie3ys08h7n" path="res://assets/UI/InGame/OnTopScreen/icono_oxigeno.png" id="1_sn0rp"]
 
 [node name="InGame" type="Control"]
 layout_mode = 3
@@ -7,8 +11,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_jwvoe")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 128.0
+offset_bottom = 256.0
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_bep8t")
+expand_mode = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_sn0rp")
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+show_percentage = false
