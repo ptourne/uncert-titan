@@ -16,6 +16,7 @@ const MAX_SPEED = 150
 const WALKING_FRICTION = 800
 const RUNNIN_FRICTION = 1200
 const MAX_OXIGEN_LEVEL = 100
+const MAX_OXIGEN_TRANSFER_SPEED = 5
 const MAX_ENERGY_LEVEL = 100
 const MAX_ENERGY_TRANSFER_SPEED = 5
 var running = false
@@ -25,7 +26,7 @@ var is_on_space_suit = false
 var in_base = false
 
 func _process(delta):
-	print("Player:",energy)
+	print("Player:",oxigen)
 	
 func is_running():
 	return running
@@ -103,4 +104,9 @@ func _on_charging_timer_timeout():
 	if in_base:
 		var energy_to_ask = min(MAX_ENERGY_LEVEL - energy, MAX_ENERGY_TRANSFER_SPEED)
 		energy += base.ask_energy(energy_to_ask)
-	
+
+func _on_oxigen_charging_timer_timeout():
+	if in_base:
+		var oxigen_to_ask = min(MAX_OXIGEN_LEVEL - oxigen, MAX_OXIGEN_TRANSFER_SPEED)
+		print("Asking for", oxigen_to_ask)
+		oxigen += base.ask_oxigen(oxigen_to_ask)
