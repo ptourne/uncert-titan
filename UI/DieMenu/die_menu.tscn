@@ -1,0 +1,80 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctp201hcv0v8r"]
+
+[ext_resource type="Theme" uid="uid://beobcn5jamo8p" path="res://UI/ui__theme.tres" id="1_mpjr4"]
+
+[sub_resource type="GDScript" id="GDScript_mqlna"]
+script/source = "extends Control
+
+@export var game_manager : GameManager
+@export var die_message_label : Label
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	hide()
+	game_manager.connect(\"die\", _on_game_manager_die_menu)
+
+func _on_game_manager_die_menu(message):
+	die_message_label.text = \"You died of \"+message
+	show()
+
+func _on_return_pressed():
+	game_manager.game_paused = false
+	get_tree().change_scene_to_file(\"res://UI/StartMenu/start_menu.tscn\")
+
+"
+
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("die_message_label")]
+process_mode = 2
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mpjr4")
+script = SubResource("GDScript_mqlna")
+die_message_label = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/DieMessage")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+text = "GAME   OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DieMessage" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "You died of"
+
+[node name="Return" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Return
+"
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/Return" to="." method="_on_return_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=20 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://w1rdb8r524rc" path="res://assets/grid/Floor.png" id="5_6xpj0"]
 [ext_resource type="PackedScene" uid="uid://di7eng28gg3cc" path="res://UI/PauseMenu/pause_menu.tscn" id="6_edt4b"]
 [ext_resource type="Texture2D" uid="uid://bmufajvw0ubyo" path="res://assets/grid/Roof.png" id="6_n07x4"]
+[ext_resource type="PackedScene" uid="uid://ctp201hcv0v8r" path="res://UI/DieMenu/die_menu.tscn" id="10_17u5c"]
 
 [sub_resource type="GDScript" id="GDScript_af865"]
 script/source = "extends Node2D
@@ -2911,6 +2912,7 @@ texture = ExtResource("4_fgii8")
 0:0/0/terrain = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 8, -2, 8, 2, 2, 2, 2, 8, -2, 8)
 0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_1/angular_velocity = 0.0
 0:0/0/terrains_peering_bit/right_side = 0
@@ -5497,7 +5499,7 @@ layer_1/modulate = Color(1, 1, 1, 1)
 layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array()
+layer_1/tile_data = PackedInt32Array(131081, 458812, 10, 196617, 458812, 10, 262153, 458812, 10, 196618, 458812, 10, 131082, 458812, 10, 196610, 458812, 10, 131074, 458812, 10)
 layer_2/name = "Obstacles"
 layer_2/enabled = true
 layer_2/modulate = Color(1, 1, 1, 1)
@@ -5511,21 +5513,21 @@ layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
 layer_3/z_index = 0
-layer_3/tile_data = PackedInt32Array(393211, 327682, 1, 393210, 2, 0, 458746, 2, 2, 458747, 65538, 2, 458748, 131074, 2, 393212, 131074, 1, 393213, 196610, 3, 327676, 131074, 1, 327675, 2, 1, 262140, 131074, 0, 262139, 2, 0)
+layer_3/tile_data = PackedInt32Array(262148, 2, 2, 196612, 2, 1, 131076, 2, 0, 131077, 65538, 0, 131078, 65538, 0, 196614, 65538, 1, 262150, 65538, 2, 196613, 65538, 1, 262149, 65538, 2, 262151, 131074, 2, 196615, 131074, 1, 131079, 131074, 0)
 layer_4/name = "Walls"
 layer_4/enabled = true
 layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
 layer_4/z_index = 0
-layer_4/tile_data = PackedInt32Array(262139, 196609, 0, 327675, 196609, 1, 393211, 131073, 1, 393210, 1, 0, 458746, 1, 2, 458747, 65537, 2, 458748, 131073, 3)
+layer_4/tile_data = PackedInt32Array(262150, 65537, 3, 262149, 65537, 3, 262148, 1, 1, 196612, 196609, 1, 131076, 1, 0, 131077, 65537, 3, 131078, 65537, 3, 131079, 131073, 3, 262151, 131073, 3, 327684, 196609, 2)
 layer_5/name = "Roof"
 layer_5/enabled = true
 layer_5/modulate = Color(1, 1, 1, 1)
 layer_5/y_sort_enabled = true
 layer_5/y_sort_origin = 0
 layer_5/z_index = 2
-layer_5/tile_data = PackedInt32Array(65541, 3, 0, 131077, 3, 1, 196613, 3, 1, 262149, 327683, 1, 262148, 65539, 0, 262147, 3, 0, 131078, 65539, 1, 196614, 65539, 1, 262150, 65539, 1, 327686, 65539, 1, 327685, 65539, 1, 327684, 65539, 1, 327683, 3, 1, 65542, 65539, 0, 65543, 131075, 1, 131079, 131075, 1, 196615, 131075, 1, 262151, 131075, 1, 327687, 131075, 1, 393223, 131075, 2, 393222, 65539, 2, 393221, 65539, 2, 393220, 65539, 2, 393219, 3, 2, 262152, 65539, 3, 262153, 65539, 3, 262154, 65539, 3, 262155, 131075, 3, 196619, 196611, 1, 131083, 196611, 1, 65547, 196611, 1, 11, 196611, 0, 10, 65539, 3, 9, 3, 2, 65545, 196611, 2, 262143, 131075, 3, 262142, 3, 3, 327678, 196611, 1, 393214, 196611, 2, 393215, 131075, 3)
+layer_5/tile_data = PackedInt32Array(131076, 3, 0, 196612, 3, 1, 196613, 65539, 1, 262149, 65539, 2, 262148, 3, 2, 262150, 65539, 2, 262151, 131075, 2, 196614, 65539, 1, 196615, 131075, 1, 131077, 65539, 0, 131078, 65539, 0, 131079, 131075, 0)
 layer_6/name = "Selector"
 layer_6/enabled = true
 layer_6/modulate = Color(1, 1, 1, 1)
@@ -5555,5 +5557,9 @@ scale = Vector2(0.25, 0.25)
 
 [node name="PauseMenu" parent="World/TileMap/Player/Control" node_paths=PackedStringArray("game_manager") instance=ExtResource("6_edt4b")]
 visible = false
+layout_mode = 1
+game_manager = NodePath("../../../../..")
+
+[node name="DieMenu" parent="World/TileMap/Player/Control" node_paths=PackedStringArray("game_manager") instance=ExtResource("10_17u5c")]
 layout_mode = 1
 game_manager = NodePath("../../../../..")
