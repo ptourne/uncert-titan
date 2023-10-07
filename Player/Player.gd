@@ -25,8 +25,6 @@ var energy : int = 0
 var is_on_space_suit = false
 var in_base = false
 
-func _process(delta):
-	print("Player:",oxigen)
 	
 func is_running():
 	return running
@@ -108,5 +106,4 @@ func _on_charging_timer_timeout():
 func _on_oxigen_charging_timer_timeout():
 	if in_base:
 		var oxigen_to_ask = min(MAX_OXIGEN_LEVEL - oxigen, MAX_OXIGEN_TRANSFER_SPEED)
-		print("Asking for", oxigen_to_ask)
 		oxigen += base.ask_oxigen(oxigen_to_ask)
