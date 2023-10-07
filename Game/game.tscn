@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=24 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bmufajvw0ubyo" path="res://assets/grid/Roof.png" id="6_n07x4"]
 [ext_resource type="Script" path="res://Objects/map.gd" id="9_r7det"]
 [ext_resource type="PackedScene" uid="uid://ctp201hcv0v8r" path="res://UI/DieMenu/die_menu.tscn" id="10_17u5c"]
-[ext_resource type="PackedScene" uid="uid://3esbeagvyup2" path="res://Game/package_manager.tscn" id="12_883x1"]
+[ext_resource type="PackedScene" uid="uid://b24fcyyndoxiy" path="res://Objects/base.tscn" id="11_t1eoa"]
+[ext_resource type="PackedScene" path="res://Game/package_manager.tscn" id="12_883x1"]
+[ext_resource type="PackedScene" uid="uid://bmtf3drba0g5v" path="res://Game/generator_colocator.tscn" id="12_xdehd"]
 [ext_resource type="Script" path="res://Game/deploy_manager.gd" id="13_1mapw"]
 
 [sub_resource type="GDScript" id="GDScript_af865"]
@@ -19,7 +21,7 @@ script/source = "extends Node2D
 
 @onready var tile_map = $TileMap
 @onready var player = $TileMap/Player
-
+@onready var generator_colocator = $GeneratorColocator
 
 func _ready():
 	pass # Replace with function body.
@@ -33,7 +35,6 @@ var ID_SELECTOR_TILE = 100
 var ID_NATURE_TILE = 60
 var ROCK_ATLAS_POSITION = Vector2i(15,9)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var hovering_tile_position = tile_map.local_to_map(get_global_mouse_position())
 	tile_map.clear_layer(SELECTOR_LAYER)
@@ -41,9 +42,7 @@ func _process(delta):
 	
 	if Input.is_action_pressed(\"click\"):
 		var clicked_tile_position = tile_map.local_to_map(get_global_mouse_position())
-		#tile_map.set_cell(OBSTACLES_LAYER, clicked_tile_position, ID_NATURE_TILE, ROCK_ATLAS_POSITION, 0)
-		tile_map.set_cells_terrain_connect(OBSTACLES_LAYER, [clicked_tile_position], 1, 0)
-
+		generator_colocator.place_windmill(clicked_tile_position)
 "
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ul0e7"]
@@ -4447,6 +4446,7 @@ texture = ExtResource("3_m3exg")
 3:10/0 = 0
 3:10/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:10/0/physics_layer_0/angular_velocity = 0.0
+3:10/0/physics_layer_0/polygon_0/points = PackedVector2Array(-2, -2, 8, -2, 8, 2, 2, 2, 2, 8, -2, 8)
 3:10/0/physics_layer_1/linear_velocity = Vector2(0, 0)
 3:10/0/physics_layer_1/angular_velocity = 0.0
 4:10/0 = 0
@@ -5521,9 +5521,9 @@ layer_6/z_index = 0
 layer_6/tile_data = PackedInt32Array()
 script = ExtResource("9_r7det")
 
-[node name="Player" parent="World/TileMap" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_oank5")]
+[node name="Player" parent="World/TileMap" node_paths=PackedStringArray("base") instance=ExtResource("4_oank5")]
 position = Vector2(78, -4)
-game_manager = NodePath("../../..")
+base = NodePath("../../Base")
 
 [node name="Camera2D" type="Camera2D" parent="World/TileMap/Player"]
 zoom = Vector2(4, 4)
@@ -5547,6 +5547,10 @@ game_manager = NodePath("../../../../..")
 [node name="DieMenu" parent="World/TileMap/Player/Control" node_paths=PackedStringArray("game_manager") instance=ExtResource("10_17u5c")]
 layout_mode = 1
 game_manager = NodePath("../../../../..")
+
+[node name="Base" parent="World" instance=ExtResource("11_t1eoa")]
+
+[node name="GeneratorColocator" parent="World" instance=ExtResource("12_xdehd")]
 
 [node name="PackageManager" parent="World" node_paths=PackedStringArray("deploy_manager") instance=ExtResource("12_883x1")]
 visible = false

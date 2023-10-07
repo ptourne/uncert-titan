@@ -37,6 +37,16 @@ shape = SubResource("CircleShape2D_xlrwb")
 [node name="BreadingTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="EnergyChargingTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="OxigenChargingTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="body_shape_entered" from="TileDetector" to="." method="_on_tile_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="TileDetector" to="." method="_on_tile_detector_body_shape_exited"]
 [connection signal="timeout" from="BreadingTimer" to="." method="_on_breading_timer_timeout"]
+[connection signal="timeout" from="EnergyChargingTimer" to="." method="_on_charging_timer_timeout"]
+[connection signal="timeout" from="OxigenChargingTimer" to="." method="_on_oxigen_charging_timer_timeout"]

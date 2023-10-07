@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmtf3drba0g5v"]
+
+[ext_resource type="Script" path="res://Game/generator_colocator.gd" id="1_y0jus"]
+
+[node name="GeneratorColocator" type="Node"]
+script = ExtResource("1_y0jus")

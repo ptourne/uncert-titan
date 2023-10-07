@@ -3,6 +3,7 @@ extends TileMap
 class_name Map
 
 enum layer_ids {
+	walls = 4,
 	roof = 5
 }
 
@@ -28,3 +29,9 @@ func hanldle_new_position(coor: Vector2i, fallable: Fallable):
 
 func place_tile(layer: int, tile_set: int, coord: Vector2i, coord_tile: Vector2i):
 	self.set_cell(layer, coord, tile_set, coord_tile, 0)
+
+func place_windmill(coords: Vector2i) -> bool:
+	if get_cell_tile_data(layer_ids.walls, coords):
+		return false
+	set_cells_terrain_connect(layer_ids.walls, [coords], 1, 0)
+	return true
