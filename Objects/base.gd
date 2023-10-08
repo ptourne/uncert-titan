@@ -41,6 +41,5 @@ func set_energy(amount):
 	energy_change.emit(amount)
 
 func set_oxigen(amount):
-	print("Set oxigen:", amount)
 	oxigen = amount
 	oxigen_change.emit(amount)

@@ -9124,8 +9124,10 @@ layer_7/z_index = 0
 layer_7/tile_data = PackedInt32Array()
 script = ExtResource("9_r7det")
 
-[node name="Player" parent="World/TileMap" node_paths=PackedStringArray("inventory") instance=ExtResource("4_oank5")]
+[node name="Player" parent="World/TileMap" node_paths=PackedStringArray("game_manager", "base", "inventory") instance=ExtResource("4_oank5")]
 position = Vector2(78, -4)
+game_manager = NodePath("../../..")
+base = NodePath("../../Base")
 inventory = NodePath("Inventory")
 
 [node name="Camera2D" type="Camera2D" parent="World/TileMap/Player"]
