@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://npr5l8hk4pi4"
-path="res://.godot/imported/barra_niveles_transparente.png-cde82fcfa90012e210335f62f0d4e892.ctex"
+uid="uid://vpcoquywsekc"
+path="res://.godot/imported/progress_bar_fill.png-7cfe7a349bd2223bb832788b2a0117c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/InGame/OnTopScreen/barra_niveles_transparente.png"
-dest_files=["res://.godot/imported/barra_niveles_transparente.png-cde82fcfa90012e210335f62f0d4e892.ctex"]
+source_file="res://assets/UI/InGame/OnTopScreen/progress_bar_fill.png"
+dest_files=["res://.godot/imported/progress_bar_fill.png-7cfe7a349bd2223bb832788b2a0117c0.ctex"]
 
 [params]
 

@@ -23,7 +23,6 @@ func show_roof():
 		set_layer_modulate(layer_ids.roof, Color(1,1,1,1))
 
 func hanldle_new_position(coor: Vector2i, fallable: Fallable):
-	print("Se intentó colocar en " + str(coor))
 	# TODO: aca podemos poner la sombra
 	self.place_tile(fallable.layer, fallable.tile_set, coor, fallable.coor)
 

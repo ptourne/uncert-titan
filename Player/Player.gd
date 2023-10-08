@@ -3,6 +3,8 @@ class_name Player
 extends CharacterBody2D
 
 signal die(message)
+signal energy_change(new_level)
+signal oxigen_change(new_level)
 
 @onready var tile_map = $".."
 @export var game_manager : GameManager
@@ -21,10 +23,14 @@ const MAX_ENERGY_LEVEL = 100
 const MAX_ENERGY_TRANSFER_SPEED = 5
 var running = false
 var oxigen : int = MAX_OXIGEN_LEVEL
-var energy : int = 0
+var energy : int = MAX_ENERGY_LEVEL
 var is_on_space_suit = false
 var in_base = false
 
+func _ready():
+	set_energy(MAX_ENERGY_LEVEL)
+	set_oxigen(MAX_OXIGEN_LEVEL)
+	
 func _process(delta):
 	pass
 	
@@ -92,7 +98,7 @@ func oxigen_toll():
 	return velocity.length() * OX_COST_PER_VELOCITY + OX_COST_BASE
 	
 func decrease_oxigen_level():
-	oxigen -= oxigen_toll()
+	set_oxigen(oxigen - oxigen_toll())
 
 func _on_breading_timer_timeout():
 	decrease_oxigen_level()
@@ -102,9 +108,18 @@ func _on_breading_timer_timeout():
 func _on_charging_timer_timeout():
 	if in_base:
 		var energy_to_ask = min(MAX_ENERGY_LEVEL - energy, MAX_ENERGY_TRANSFER_SPEED)
-		energy += base.ask_energy(energy_to_ask)
+		set_energy(energy + base.ask_energy(energy_to_ask))
 
 func _on_oxigen_charging_timer_timeout():
 	if in_base:
 		var oxigen_to_ask = min(MAX_OXIGEN_LEVEL - oxigen, MAX_OXIGEN_TRANSFER_SPEED)
-		oxigen += base.ask_oxigen(oxigen_to_ask)
+		set_oxigen(oxigen + base.ask_oxigen(oxigen_to_ask))
+
+
+func set_energy(amount):
+	energy = amount
+	energy_change.emit(amount)
+
+func set_oxigen(amount):
+	oxigen = amount
+	oxigen_change.emit(amount)

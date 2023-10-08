@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=19 format=3 uid="uid://beobcn5jamo8p"]
+[gd_resource type="Theme" load_steps=18 format=3 uid="uid://beobcn5jamo8p"]
 
 [ext_resource type="Texture2D" uid="uid://ggoc6tn4tp7x" path="res://UI/Assets/button_disabled.png" id="1_32im8"]
 [ext_resource type="Texture2D" uid="uid://ckmqrfhbcdwtf" path="res://UI/Assets/button_focus.png" id="2_cawdu"]
@@ -7,8 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://besymbhfrfnc5" path="res://UI/Assets/button_pressed.png" id="5_dgqjk"]
 [ext_resource type="Texture2D" uid="uid://x34csy8wm4gv" path="res://UI/Assets/pane.png" id="6_ofobe"]
 [ext_resource type="FontFile" uid="uid://bfiycsw4ipgqm" path="res://UI/Assets/NormalFont.ttf" id="7_0mr2d"]
-[ext_resource type="Texture2D" uid="uid://npr5l8hk4pi4" path="res://assets/UI/InGame/OnTopScreen/barra_niveles_transparente.png" id="7_buijy"]
-[ext_resource type="Texture2D" uid="uid://cjub8y4lhpkn4" path="res://assets/UI/InGame/OnTopScreen/barra_niveles.png" id="7_pu0fx"]
+[ext_resource type="Texture2D" uid="uid://bpk836kc304ui" path="res://assets/UI/InGame/OnTopScreen/progress_bar_under.png" id="7_n8ocg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jbmqv"]
 texture = ExtResource("1_32im8")
@@ -73,18 +72,18 @@ texture_margin_right = 56.0
 texture_margin_bottom = 56.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xj32v"]
-texture = ExtResource("7_pu0fx")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
+texture = ExtResource("7_n8ocg")
+texture_margin_left = 7.0
+texture_margin_top = 7.0
+texture_margin_right = 7.0
+texture_margin_bottom = 7.0
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4us14"]
-texture = ExtResource("7_buijy")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr2m4"]
+bg_color = Color(0, 0.762475, 0.783417, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
 
 [resource]
 default_font = ExtResource("7_0mr2d")
@@ -102,9 +101,12 @@ Button/styles/normal = SubResource("StyleBoxTexture_dt3r4")
 Button/styles/pressed = SubResource("StyleBoxTexture_bo41n")
 HeaderLarge/font_sizes/font_size = 48
 HeaderMedium/font_sizes/font_size = 32
+HeaderSmall/font_sizes/font_size = 10
+IndicatorLabel/font_sizes/Normal = 16
+Label/font_sizes/Small = 16
 Label/font_sizes/font_size = 32
 Panel/styles/panel = SubResource("StyleBoxTexture_imnjt")
 PanelContainer/styles/panel = SubResource("StyleBoxTexture_ol4hu")
 ProgressBar/styles/background = SubResource("StyleBoxTexture_xj32v")
-ProgressBar/styles/fill = SubResource("StyleBoxTexture_4us14")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_rr2m4")
 VBoxContainer/constants/separation = 8

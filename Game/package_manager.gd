@@ -23,7 +23,6 @@ func _ready():
 	timer.start(self.time)
 
 func create_package():
-	print("Generando")
 	var package = scene.instantiate()
 	add_child(package)
 	
