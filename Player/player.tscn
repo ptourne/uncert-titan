@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c554rdx5sfkqi"]
+[gd_scene load_steps=6 format=3 uid="uid://c554rdx5sfkqi"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_7cth1"]
 [ext_resource type="Texture2D" uid="uid://dfrx3f810ooqu" path="res://Player/player_sprites.png" id="2_6okte"]
@@ -10,11 +10,15 @@ height = 6.00001
 [sub_resource type="CircleShape2D" id="CircleShape2D_xlrwb"]
 radius = 5.0
 
-[node name="Player" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_q3whw"]
+radius = 20.0
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("inventory")]
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_7cth1")
+inventory = NodePath("")
 
 [node name="Graphics" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
@@ -45,8 +49,17 @@ autostart = true
 wait_time = 0.1
 autostart = true
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 64
+
+[node name="CollisionArea" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3.395)
+shape = SubResource("CircleShape2D_q3whw")
+
 [connection signal="body_shape_entered" from="TileDetector" to="." method="_on_tile_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="TileDetector" to="." method="_on_tile_detector_body_shape_exited"]
 [connection signal="timeout" from="BreadingTimer" to="." method="_on_breading_timer_timeout"]
 [connection signal="timeout" from="EnergyChargingTimer" to="." method="_on_charging_timer_timeout"]
 [connection signal="timeout" from="OxigenChargingTimer" to="." method="_on_oxigen_charging_timer_timeout"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_pick_up_item"]

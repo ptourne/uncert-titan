@@ -6,9 +6,11 @@ signal die(message)
 signal energy_change(new_level)
 signal oxigen_change(new_level)
 
-@onready var tile_map = $".."
+@onready var tile_map: Map = $".."
+
 @export var game_manager : GameManager
 @export var base: Base
+@export var inventory: Inventory
 
 const WALKING_ACCELERATION = 600
 const RUNNIN_ACCELERATION = 1000
@@ -21,6 +23,10 @@ const MAX_OXIGEN_LEVEL = 100
 const MAX_OXIGEN_TRANSFER_SPEED = 5
 const MAX_ENERGY_LEVEL = 100
 const MAX_ENERGY_TRANSFER_SPEED = 5
+
+const OX_COST_PER_VELOCITY = 0.1
+const OX_COST_BASE = 0.01
+
 var running = false
 var oxigen : int = MAX_OXIGEN_LEVEL
 var energy : int = MAX_ENERGY_LEVEL
@@ -73,9 +79,16 @@ func _physics_process(delta):
 func _input(event):
 	if event.is_action_pressed("ui_run"):
 		running = true
+
 	if event.is_action_released("ui_run"):
 		running = false
 
+func _pick_up_item(body_rid, body: TileMap, body_shape_index, local_shape_index):
+	var position = body.get_coords_for_body_rid(body_rid)
+	var item_id = self.tile_map.remove_item(position)
+	
+	if item_id >= 0:
+		self.inventory.add_item(item_id)
 
 func _on_tile_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	_handle_under_roof(body_rid, body)
@@ -92,8 +105,6 @@ func _handle_off_roof(body_rid, current_tile_map):
 	current_tile_map.show_roof()
 	in_base = false
 
-const OX_COST_PER_VELOCITY = 0.1
-const OX_COST_BASE = 0.01
 func oxigen_toll():
 	return velocity.length() * OX_COST_PER_VELOCITY + OX_COST_BASE
 	
