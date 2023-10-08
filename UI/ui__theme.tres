@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b6mwvg27v0ul1" path="res://assets/UI/Menu/button_pressed.png" id="5_ta1q0"]
 [ext_resource type="Texture2D" uid="uid://x34csy8wm4gv" path="res://UI/Assets/pane.png" id="6_ofobe"]
 [ext_resource type="FontFile" uid="uid://bfiycsw4ipgqm" path="res://UI/Assets/NormalFont.ttf" id="7_0mr2d"]
-[ext_resource type="FontFile" uid="uid://bdxhganook5pl" path="res://assets/Text/Main_font.TTF" id="7_8cydn"]
+[ext_resource type="FontFile" uid="uid://btcq7mdboq78m" path="res://assets/Text/Main_font.TTF" id="7_8cydn"]
 [ext_resource type="Texture2D" uid="uid://2xgvmkrklucn" path="res://assets/UI/InGame/OnTopScreen/assistant_frame.png" id="7_g2wxs"]
 [ext_resource type="Texture2D" uid="uid://bpk836kc304ui" path="res://assets/UI/InGame/OnTopScreen/progress_bar_under.png" id="7_n8ocg"]
 

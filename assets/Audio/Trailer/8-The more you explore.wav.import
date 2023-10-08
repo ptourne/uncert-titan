@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d2jp1iwgq3if3"
+path="res://.godot/imported/8-The more you explore.wav-635c8c7e551aa0847cd0e2608a8f0a62.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Trailer/8-The more you explore.wav"
+dest_files=["res://.godot/imported/8-The more you explore.wav-635c8c7e551aa0847cd0e2608a8f0a62.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

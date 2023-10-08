@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://UI/InGame/suit_frame.gd" id="9_q4i2x"]
 [ext_resource type="Texture2D" uid="uid://esw2d16mdilr" path="res://assets/UI/InGame/OnTopScreen/icono_energia.png" id="10_s1wxe"]
 [ext_resource type="Script" path="res://UI/InGame/text_assistant.gd" id="11_p0n8m"]
-[ext_resource type="FontFile" uid="uid://er2636s3urj3" path="res://assets/Text/Inside_game_font.ttf" id="12_1wtmf"]
+[ext_resource type="FontFile" uid="uid://foyykjvrgsxd" path="res://assets/Text/Inside_game_font.ttf" id="12_1wtmf"]
 [ext_resource type="Script" path="res://UI/InGame/popup.gd" id="12_05vv0"]
 [ext_resource type="Texture2D" uid="uid://htnlluegpmex" path="res://assets/UI/InGame/OnTopScreen/caja_de_item.png" id="13_fyqn5"]
 
@@ -78,7 +78,9 @@ expand_mode = 4
 [node name="Label" type="Label" parent="AssistantFrame/Margin/MainFrame"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "    Base"
+theme_override_fonts/font = ExtResource("12_1wtmf")
+text = " Base"
+vertical_alignment = 2
 
 [node name="Indicators" type="VBoxContainer" parent="AssistantFrame/Margin/MainFrame"]
 layout_mode = 2
@@ -128,7 +130,7 @@ layout_mode = 2
 offset_left = 32.0
 offset_top = 64.0
 offset_right = 311.0
-offset_bottom = 313.0
+offset_bottom = 376.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_o3qbl")
 script = ExtResource("9_q4i2x")
 
@@ -141,7 +143,9 @@ layout_mode = 2
 [node name="Label" type="Label" parent="SuitFrame/Margin/Stats"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "   Suit"
+theme_override_fonts/font = ExtResource("12_1wtmf")
+text = " Suit"
+vertical_alignment = 2
 
 [node name="Indicators" type="VBoxContainer" parent="SuitFrame/Margin/Stats"]
 layout_mode = 2
@@ -180,6 +184,23 @@ texture_under = ExtResource("4_mnjua")
 texture_over = ExtResource("5_0pki8")
 texture_progress = ExtResource("6_8fcp0")
 
+[node name="Temp" type="HBoxContainer" parent="SuitFrame/Margin/Stats/Indicators"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="SuitFrame/Margin/Stats/Indicators/Temp"]
+layout_mode = 2
+texture = ExtResource("10_s1wxe")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="SuitFrame/Margin/Stats/Indicators/Temp"]
+layout_mode = 2
+stretch_margin_left = 24
+stretch_margin_top = 24
+stretch_margin_right = 24
+stretch_margin_bottom = 24
+texture_under = ExtResource("4_mnjua")
+texture_over = ExtResource("5_0pki8")
+texture_progress = ExtResource("6_8fcp0")
+
 [node name="AssistanContainer" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 1568.0
@@ -197,9 +218,9 @@ script = ExtResource("11_p0n8m")
 [node name="PopUpContainer" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 320.0
+offset_top = 386.0
 offset_right = 312.0
-offset_bottom = 456.0
+offset_bottom = 522.0
 
 [node name="PopUp" type="Label" parent="PopUpContainer" node_paths=PackedStringArray("container")]
 layout_mode = 2

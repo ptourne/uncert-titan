@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cfmcbkwo44l73"
+path="res://.godot/imported/11-Just wait. Keep learning. We are going to reach you.wav-835c8507797a6b252ee98d3e2ef97662.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Trailer/11-Just wait. Keep learning. We are going to reach you.wav"
+dest_files=["res://.godot/imported/11-Just wait. Keep learning. We are going to reach you.wav-835c8507797a6b252ee98d3e2ef97662.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
