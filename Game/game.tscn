@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=40 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://ctp201hcv0v8r" path="res://UI/DieMenu/die_menu.tscn" id="10_17u5c"]
 [ext_resource type="PackedScene" uid="uid://bts2efj2aei60" path="res://Objects/base.tscn" id="11_t1eoa"]
 [ext_resource type="PackedScene" uid="uid://3esbeagvyup2" path="res://Game/package_manager.tscn" id="12_883x1"]
+[ext_resource type="Texture2D" uid="uid://cdufpvd2fpgbk" path="res://assets/base/molino_congelado.png" id="12_n5747"]
 [ext_resource type="Texture2D" uid="uid://1mokxyudrtfb" path="res://assets/UI/InGame/FogOverlay.png" id="12_wwloo"]
 [ext_resource type="PackedScene" uid="uid://bmtf3drba0g5v" path="res://Game/generator_colocator.tscn" id="12_xdehd"]
 [ext_resource type="Script" path="res://Game/deploy_manager.gd" id="13_1mapw"]
@@ -11903,6 +11904,21 @@ texture = ExtResource("3_m3exg")
 11:20/0/physics_layer_3/linear_velocity = Vector2(0, 0)
 11:20/0/physics_layer_3/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_to6gl"]
+texture = ExtResource("12_n5747")
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 15)
+0:0/0/y_sort_origin = 6
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+0:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_2/angular_velocity = 0.0
+0:0/0/physics_layer_3/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_3/angular_velocity = 0.0
+
 [sub_resource type="TileSet" id="TileSet_28muk"]
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 32
@@ -11939,6 +11955,7 @@ sources/5 = SubResource("TileSetAtlasSource_ggoni")
 sources/2 = SubResource("TileSetAtlasSource_s6bdy")
 sources/4 = SubResource("TileSetAtlasSource_cksru")
 sources/6 = SubResource("TileSetAtlasSource_3o02q")
+sources/7 = SubResource("TileSetAtlasSource_to6gl")
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("player")]
 process_mode = 3
@@ -12002,7 +12019,7 @@ layer_6/modulate = Color(1, 1, 1, 1)
 layer_6/y_sort_enabled = false
 layer_6/y_sort_origin = 0
 layer_6/z_index = 0
-layer_6/tile_data = PackedInt32Array(9, 5, 0, -327675, 65541, 0, -327676, 65541, 0, -327677, 65541, 0, -327678, 65541, 0, 11, 5, 0)
+layer_6/tile_data = PackedInt32Array()
 layer_7/name = "Descriptable"
 layer_7/enabled = true
 layer_7/modulate = Color(1, 1, 1, 1)
@@ -12020,6 +12037,7 @@ layer_8/tile_data = PackedInt32Array()
 script = ExtResource("9_r7det")
 
 [node name="Player" parent="World/TileMap" node_paths=PackedStringArray("game_manager", "base", "inventory", "send_message", "send_despcription") instance=ExtResource("4_oank5")]
+visible = false
 position = Vector2(78, -4)
 game_manager = NodePath("../../..")
 base = NodePath("../../Base")
