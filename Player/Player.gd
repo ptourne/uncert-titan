@@ -97,11 +97,15 @@ func _pick_up_item(body_rid, body: TileMap, body_shape_index, local_shape_index)
 
 func _interact_descriptable(body_rid, body: TileMap, body_shape_index, local_shape_index):
 	var position = body.get_coords_for_body_rid(body_rid)
-	var description = "ey"
-	self.send_despcription.emit_description(description)
+	var description = self.tile_map.get_description(position)
+	if description != "":
+		self.send_despcription.emit_description(description)
 
-func _hide_descriptable(body_rid, body, body_shape_index, local_shape_index):
-	self.send_despcription.emit_hide()
+func _hide_descriptable(body_rid, body: TileMap, body_shape_index, local_shape_index):
+	var position = body.get_coords_for_body_rid(body_rid)
+	var description = self.tile_map.get_description(position)
+	if description != "":
+		self.send_despcription.emit_hide()
 
 func _on_tile_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	_handle_under_roof(body_rid, body)

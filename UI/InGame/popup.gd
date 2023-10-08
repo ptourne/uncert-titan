@@ -16,8 +16,6 @@ func set_visibility(state: bool):
 func show_description(description: String):
 	set_visibility(true)
 	self.text = description
-	print(description)
-	
 
 func hide_description():
 	set_visibility(false)
