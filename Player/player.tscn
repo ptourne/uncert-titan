@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c554rdx5sfkqi"]
+[gd_scene load_steps=7 format=3 uid="uid://c554rdx5sfkqi"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_7cth1"]
 [ext_resource type="Texture2D" uid="uid://bf4wejdf3wm54" path="res://assets/Player/player.png" id="2_ua3rn"]
@@ -11,6 +11,9 @@ height = 6.00001
 radius = 5.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q3whw"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8v3wl"]
 radius = 20.0
 
 [node name="Player" type="CharacterBody2D"]
@@ -55,9 +58,19 @@ collision_mask = 64
 position = Vector2(0, -3.395)
 shape = SubResource("CircleShape2D_q3whw")
 
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 128
+
+[node name="CollisionArea" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(0, -3.255)
+shape = SubResource("CircleShape2D_8v3wl")
+
 [connection signal="body_shape_entered" from="TileDetector" to="." method="_on_tile_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="TileDetector" to="." method="_on_tile_detector_body_shape_exited"]
 [connection signal="timeout" from="BreadingTimer" to="." method="_on_breading_timer_timeout"]
 [connection signal="timeout" from="EnergyChargingTimer" to="." method="_on_charging_timer_timeout"]
 [connection signal="timeout" from="OxigenChargingTimer" to="." method="_on_oxigen_charging_timer_timeout"]
 [connection signal="body_shape_entered" from="Area2D" to="." method="_pick_up_item"]
+[connection signal="body_shape_entered" from="Area2D2" to="." method="_interact_descriptable"]
+[connection signal="body_shape_exited" from="Area2D2" to="." method="_hide_descriptable"]

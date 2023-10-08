@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=18 format=3 uid="uid://beobcn5jamo8p"]
+[gd_resource type="Theme" load_steps=19 format=3 uid="uid://beobcn5jamo8p"]
 
 [ext_resource type="Texture2D" uid="uid://b005c0mp2stdr" path="res://assets/UI/Menu/button.png" id="1_4b0m1"]
 [ext_resource type="Texture2D" uid="uid://cm8ytlo02eain" path="res://assets/UI/Menu/button_disabled.png" id="1_p2r8t"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b6mwvg27v0ul1" path="res://assets/UI/Menu/button_pressed.png" id="5_ta1q0"]
 [ext_resource type="Texture2D" uid="uid://x34csy8wm4gv" path="res://UI/Assets/pane.png" id="6_ofobe"]
 [ext_resource type="FontFile" uid="uid://bfiycsw4ipgqm" path="res://UI/Assets/NormalFont.ttf" id="7_0mr2d"]
+[ext_resource type="Texture2D" uid="uid://2xgvmkrklucn" path="res://assets/UI/InGame/OnTopScreen/assistant_frame.png" id="7_g2wxs"]
 [ext_resource type="Texture2D" uid="uid://bpk836kc304ui" path="res://assets/UI/InGame/OnTopScreen/progress_bar_under.png" id="7_n8ocg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jbmqv"]
@@ -53,11 +54,11 @@ texture_margin_bottom = 12.0
 region_rect = Rect2(0, 0, 64, 64)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ol4hu"]
-texture = ExtResource("6_ofobe")
-texture_margin_left = 56.0
-texture_margin_top = 56.0
-texture_margin_right = 56.0
-texture_margin_bottom = 56.0
+texture = ExtResource("7_g2wxs")
+texture_margin_left = 24.0
+texture_margin_top = 24.0
+texture_margin_right = 24.0
+texture_margin_bottom = 24.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xj32v"]
 texture = ExtResource("7_n8ocg")
