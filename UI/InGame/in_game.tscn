@@ -11,7 +11,7 @@
 [ext_resource type="Script" path="res://UI/InGame/suit_frame.gd" id="9_q4i2x"]
 [ext_resource type="Texture2D" uid="uid://esw2d16mdilr" path="res://assets/UI/InGame/OnTopScreen/icono_energia.png" id="10_s1wxe"]
 [ext_resource type="Script" path="res://UI/InGame/text_assistant.gd" id="11_p0n8m"]
-[ext_resource type="FontFile" uid="uid://foyykjvrgsxd" path="res://assets/Text/Inside_game_font.ttf" id="12_1wtmf"]
+[ext_resource type="FontFile" uid="uid://er2636s3urj3" path="res://assets/Text/Inside_game_font.ttf" id="12_1wtmf"]
 [ext_resource type="Script" path="res://UI/InGame/popup.gd" id="12_05vv0"]
 [ext_resource type="Texture2D" uid="uid://htnlluegpmex" path="res://assets/UI/InGame/OnTopScreen/caja_de_item.png" id="13_fyqn5"]
 

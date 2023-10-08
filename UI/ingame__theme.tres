@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=20 format=3 uid="uid://c7w5afy45j5ct"]
 
-[ext_resource type="FontFile" uid="uid://foyykjvrgsxd" path="res://assets/Text/Inside_game_font.ttf" id="1_a6whq"]
+[ext_resource type="FontFile" uid="uid://er2636s3urj3" path="res://assets/Text/Inside_game_font.ttf" id="1_a6whq"]
 [ext_resource type="Texture2D" uid="uid://cm8ytlo02eain" path="res://assets/UI/Menu/button_disabled.png" id="2_2mpww"]
 [ext_resource type="Texture2D" uid="uid://cc4h0v7lnve5n" path="res://assets/UI/Menu/button_focus.png" id="3_i2wwd"]
 [ext_resource type="Texture2D" uid="uid://cgc7yks057p5y" path="res://assets/UI/Menu/button_hover.png" id="4_wd8ws"]
