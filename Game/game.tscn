@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=35 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://w1rdb8r524rc" path="res://assets/grid/Floor.png" id="6_c5yb2"]
 [ext_resource type="PackedScene" uid="uid://di7eng28gg3cc" path="res://UI/PauseMenu/pause_menu.tscn" id="6_edt4b"]
 [ext_resource type="Texture2D" uid="uid://bmufajvw0ubyo" path="res://assets/grid/Roof.png" id="6_n07x4"]
+[ext_resource type="Texture2D" uid="uid://c00gbc47lumyg" path="res://assets/grid/ExclamationMark.png" id="8_n5yjr"]
 [ext_resource type="Texture2D" uid="uid://but0up2hw3vq5" path="res://assets/Tilesets/TilesetWater.png" id="8_yjpxs"]
 [ext_resource type="Script" path="res://Objects/map.gd" id="9_r7det"]
 [ext_resource type="PackedScene" uid="uid://ctp201hcv0v8r" path="res://UI/DieMenu/die_menu.tscn" id="10_17u5c"]
@@ -6075,6 +6076,45 @@ texture = ExtResource("6_n07x4")
 3:3/0/physics_layer_3/linear_velocity = Vector2(0, 0)
 3:3/0/physics_layer_3/angular_velocity = 0.0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cksru"]
+texture = ExtResource("8_n5yjr")
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 4)
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+0:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_2/angular_velocity = 0.0
+0:0/0/physics_layer_3/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_3/angular_velocity = 0.0
+0:0/0/physics_layer_3/polygon_0/points = PackedVector2Array(-12, -8, 12, -8, 12, 16, -12, 16)
+0:0/0/custom_data_1 = &"Press \"U\" to unfrost this windmill"
+0:0/1 = 1
+0:0/1/texture_origin = Vector2i(0, 4)
+0:0/1/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_0/angular_velocity = 0.0
+0:0/1/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_1/angular_velocity = 0.0
+0:0/1/physics_layer_2/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_2/angular_velocity = 0.0
+0:0/1/physics_layer_3/linear_velocity = Vector2(0, 0)
+0:0/1/physics_layer_3/angular_velocity = 0.0
+0:0/1/physics_layer_3/polygon_0/points = PackedVector2Array(-12, -8, 12, -8, 12, 16, -12, 16)
+0:0/1/custom_data_1 = &"Methane lakes are pretty common in Titan. Be carefull not to step in!"
+0:0/2 = 2
+0:0/2/texture_origin = Vector2i(0, 4)
+0:0/2/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/2/physics_layer_0/angular_velocity = 0.0
+0:0/2/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/2/physics_layer_1/angular_velocity = 0.0
+0:0/2/physics_layer_2/linear_velocity = Vector2(0, 0)
+0:0/2/physics_layer_2/angular_velocity = 0.0
+0:0/2/physics_layer_3/linear_velocity = Vector2(0, 0)
+0:0/2/physics_layer_3/angular_velocity = 0.0
+0:0/2/physics_layer_3/polygon_0/points = PackedVector2Array(-12, -8, 12, -8, 12, 16, -12, 16)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ggoni"]
 texture = ExtResource("8_yjpxs")
 1:0/0 = 0
@@ -11860,6 +11900,7 @@ sources/1 = SubResource("TileSetAtlasSource_wwoix")
 sources/3 = SubResource("TileSetAtlasSource_ebpqa")
 sources/5 = SubResource("TileSetAtlasSource_ggoni")
 sources/2 = SubResource("TileSetAtlasSource_s6bdy")
+sources/4 = SubResource("TileSetAtlasSource_cksru")
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("player")]
 process_mode = 3
@@ -11930,7 +11971,7 @@ layer_7/modulate = Color(1, 1, 1, 1)
 layer_7/y_sort_enabled = false
 layer_7/y_sort_origin = 0
 layer_7/z_index = 0
-layer_7/tile_data = PackedInt32Array(65538, 0, 4, 262153, 0, 5, 327688, 0, 5, 393223, 0, 5)
+layer_7/tile_data = PackedInt32Array(65538, 4, 0, 262153, 4, 65536, 327688, 0, 5, 393223, 0, 5, -262132, 4, 65536)
 layer_8/name = "Selector"
 layer_8/enabled = true
 layer_8/modulate = Color(1, 1, 1, 1)
