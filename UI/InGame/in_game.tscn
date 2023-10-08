@@ -1,0 +1,168 @@
+[gd_scene load_steps=13 format=3 uid="uid://cmrrhy57enq3j"]
+
+[ext_resource type="Texture2D" uid="uid://djqnnieyh8f8v" path="res://assets/UI/InGame/OnTopScreen/radar.png" id="1_bep8t"]
+[ext_resource type="Theme" uid="uid://beobcn5jamo8p" path="res://UI/ui__theme.tres" id="1_jwvoe"]
+[ext_resource type="Texture2D" uid="uid://c3jie3ys08h7n" path="res://assets/UI/InGame/OnTopScreen/icono_oxigeno.png" id="1_sn0rp"]
+[ext_resource type="Texture2D" uid="uid://2xgvmkrklucn" path="res://assets/UI/InGame/OnTopScreen/assistant_frame.png" id="2_xpg0j"]
+[ext_resource type="Script" path="res://UI/InGame/in_game_ui.gd" id="2_yrifr"]
+[ext_resource type="Texture2D" uid="uid://bpk836kc304ui" path="res://assets/UI/InGame/OnTopScreen/progress_bar_under.png" id="4_mnjua"]
+[ext_resource type="Texture2D" uid="uid://3eso8741im3w" path="res://assets/UI/InGame/OnTopScreen/progress_bar_top.png" id="5_0pki8"]
+[ext_resource type="Texture2D" uid="uid://vpcoquywsekc" path="res://assets/UI/InGame/OnTopScreen/progress_bar_fill.png" id="6_8fcp0"]
+[ext_resource type="Script" path="res://UI/InGame/suit_frame.gd" id="9_q4i2x"]
+[ext_resource type="Texture2D" uid="uid://esw2d16mdilr" path="res://assets/UI/InGame/OnTopScreen/icono_energia.png" id="10_s1wxe"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taynb"]
+texture = ExtResource("2_xpg0j")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o3qbl"]
+texture = ExtResource("2_xpg0j")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[node name="InGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_jwvoe")
+script = ExtResource("2_yrifr")
+
+[node name="AssistantFrame" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 1455.0
+offset_top = 230.0
+offset_right = 1967.0
+offset_bottom = 966.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+theme_override_styles/panel = SubResource("StyleBoxTexture_taynb")
+
+[node name="Margin" type="MarginContainer" parent="AssistantFrame"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="MainFrame" type="VBoxContainer" parent="AssistantFrame/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="TextureRect" type="TextureRect" parent="AssistantFrame/Margin/MainFrame"]
+layout_mode = 2
+texture = ExtResource("1_bep8t")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="AssistantFrame/Margin/MainFrame"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Base"
+
+[node name="Indicators" type="VBoxContainer" parent="AssistantFrame/Margin/MainFrame"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Oxigen" type="HBoxContainer" parent="AssistantFrame/Margin/MainFrame/Indicators"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="AssistantFrame/Margin/MainFrame/Indicators/Oxigen"]
+layout_mode = 2
+texture = ExtResource("1_sn0rp")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="AssistantFrame/Margin/MainFrame/Indicators/Oxigen"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+nine_patch_stretch = true
+stretch_margin_left = 24
+stretch_margin_top = 24
+stretch_margin_right = 24
+stretch_margin_bottom = 24
+texture_under = ExtResource("4_mnjua")
+texture_over = ExtResource("5_0pki8")
+texture_progress = ExtResource("6_8fcp0")
+
+[node name="Energy" type="HBoxContainer" parent="AssistantFrame/Margin/MainFrame/Indicators"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="AssistantFrame/Margin/MainFrame/Indicators/Energy"]
+layout_mode = 2
+texture = ExtResource("10_s1wxe")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="AssistantFrame/Margin/MainFrame/Indicators/Energy"]
+layout_mode = 2
+size_flags_horizontal = 3
+nine_patch_stretch = true
+stretch_margin_left = 24
+stretch_margin_top = 24
+stretch_margin_right = 24
+stretch_margin_bottom = 24
+texture_under = ExtResource("4_mnjua")
+texture_over = ExtResource("5_0pki8")
+texture_progress = ExtResource("6_8fcp0")
+
+[node name="SuitFrame" type="PanelContainer" parent="."]
+layout_mode = 2
+offset_left = 35.0
+offset_top = 69.0
+offset_right = 107.0
+offset_bottom = 183.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_o3qbl")
+script = ExtResource("9_q4i2x")
+
+[node name="Margin" type="MarginContainer" parent="SuitFrame"]
+layout_mode = 2
+
+[node name="Stats" type="VBoxContainer" parent="SuitFrame/Margin"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SuitFrame/Margin/Stats"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+text = "Suit"
+
+[node name="Indicators" type="VBoxContainer" parent="SuitFrame/Margin/Stats"]
+layout_mode = 2
+
+[node name="Oxigen" type="HBoxContainer" parent="SuitFrame/Margin/Stats/Indicators"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="SuitFrame/Margin/Stats/Indicators/Oxigen"]
+layout_mode = 2
+texture = ExtResource("1_sn0rp")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="SuitFrame/Margin/Stats/Indicators/Oxigen"]
+layout_mode = 2
+stretch_margin_left = 24
+stretch_margin_top = 24
+stretch_margin_right = 24
+stretch_margin_bottom = 24
+texture_under = ExtResource("4_mnjua")
+texture_over = ExtResource("5_0pki8")
+texture_progress = ExtResource("6_8fcp0")
+
+[node name="Energy" type="HBoxContainer" parent="SuitFrame/Margin/Stats/Indicators"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="SuitFrame/Margin/Stats/Indicators/Energy"]
+layout_mode = 2
+texture = ExtResource("10_s1wxe")
+
+[node name="ProgressBar" type="TextureProgressBar" parent="SuitFrame/Margin/Stats/Indicators/Energy"]
+layout_mode = 2
+stretch_margin_left = 24
+stretch_margin_top = 24
+stretch_margin_right = 24
+stretch_margin_bottom = 24
+texture_under = ExtResource("4_mnjua")
+texture_over = ExtResource("5_0pki8")
+texture_progress = ExtResource("6_8fcp0")
