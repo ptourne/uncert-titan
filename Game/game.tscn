@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=38 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://c00gbc47lumyg" path="res://assets/grid/ExclamationMark.png" id="8_n5yjr"]
 [ext_resource type="Texture2D" uid="uid://but0up2hw3vq5" path="res://assets/Tilesets/TilesetWater.png" id="8_yjpxs"]
 [ext_resource type="Script" path="res://Objects/map.gd" id="9_r7det"]
+[ext_resource type="Texture2D" uid="uid://cu2uyhnq4nxon" path="res://assets/base/molino_animado_tilesheet.png" id="10_0e3je"]
 [ext_resource type="PackedScene" uid="uid://ctp201hcv0v8r" path="res://UI/DieMenu/die_menu.tscn" id="10_17u5c"]
 [ext_resource type="PackedScene" uid="uid://bts2efj2aei60" path="res://Objects/base.tscn" id="11_t1eoa"]
 [ext_resource type="PackedScene" uid="uid://3esbeagvyup2" path="res://Game/package_manager.tscn" id="12_883x1"]
@@ -5218,6 +5219,7 @@ texture = ExtResource("1_spn7i")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wwoix"]
 texture = ExtResource("4_fgii8")
 0:0/0 = 0
+0:0/0/y_sort_origin = 6
 0:0/0/terrain_set = 1
 0:0/0/terrain = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5232,6 +5234,7 @@ texture = ExtResource("4_fgii8")
 0:0/0/terrains_peering_bit/right_side = 0
 0:0/0/terrains_peering_bit/bottom_side = 0
 1:0/0 = 0
+1:0/0/y_sort_origin = 6
 1:0/0/terrain_set = 1
 1:0/0/terrain = 0
 1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5246,6 +5249,7 @@ texture = ExtResource("4_fgii8")
 1:0/0/terrains_peering_bit/bottom_side = 0
 1:0/0/terrains_peering_bit/left_side = 0
 2:0/0 = 0
+2:0/0/y_sort_origin = 6
 2:0/0/terrain_set = 1
 2:0/0/terrain = 0
 2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5259,6 +5263,7 @@ texture = ExtResource("4_fgii8")
 2:0/0/terrains_peering_bit/bottom_side = 0
 2:0/0/terrains_peering_bit/left_side = 0
 3:0/0 = 0
+3:0/0/y_sort_origin = 6
 3:0/0/terrain_set = 1
 3:0/0/terrain = 0
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5271,6 +5276,7 @@ texture = ExtResource("4_fgii8")
 3:0/0/physics_layer_3/angular_velocity = 0.0
 3:0/0/terrains_peering_bit/bottom_side = 0
 0:1/0 = 0
+0:1/0/y_sort_origin = 6
 0:1/0/terrain_set = 1
 0:1/0/terrain = 0
 0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5285,6 +5291,7 @@ texture = ExtResource("4_fgii8")
 0:1/0/terrains_peering_bit/bottom_side = 0
 0:1/0/terrains_peering_bit/top_side = 0
 1:1/0 = 0
+1:1/0/y_sort_origin = 6
 1:1/0/terrain_set = 1
 1:1/0/terrain = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5300,6 +5307,7 @@ texture = ExtResource("4_fgii8")
 1:1/0/terrains_peering_bit/left_side = 0
 1:1/0/terrains_peering_bit/top_side = 0
 2:1/0 = 0
+2:1/0/y_sort_origin = 6
 2:1/0/terrain_set = 1
 2:1/0/terrain = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5314,6 +5322,7 @@ texture = ExtResource("4_fgii8")
 2:1/0/terrains_peering_bit/left_side = 0
 2:1/0/terrains_peering_bit/top_side = 0
 3:1/0 = 0
+3:1/0/y_sort_origin = 6
 3:1/0/terrain_set = 1
 3:1/0/terrain = 0
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5327,6 +5336,7 @@ texture = ExtResource("4_fgii8")
 3:1/0/terrains_peering_bit/bottom_side = 0
 3:1/0/terrains_peering_bit/top_side = 0
 0:2/0 = 0
+0:2/0/y_sort_origin = 6
 0:2/0/terrain_set = 1
 0:2/0/terrain = 0
 0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5340,6 +5350,7 @@ texture = ExtResource("4_fgii8")
 0:2/0/terrains_peering_bit/right_side = 0
 0:2/0/terrains_peering_bit/top_side = 0
 1:2/0 = 0
+1:2/0/y_sort_origin = 6
 1:2/0/terrain_set = 1
 1:2/0/terrain = 0
 1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5354,6 +5365,7 @@ texture = ExtResource("4_fgii8")
 1:2/0/terrains_peering_bit/left_side = 0
 1:2/0/terrains_peering_bit/top_side = 0
 2:2/0 = 0
+2:2/0/y_sort_origin = 6
 2:2/0/terrain_set = 1
 2:2/0/terrain = 0
 2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5367,6 +5379,7 @@ texture = ExtResource("4_fgii8")
 2:2/0/terrains_peering_bit/left_side = 0
 2:2/0/terrains_peering_bit/top_side = 0
 3:2/0 = 0
+3:2/0/y_sort_origin = 6
 3:2/0/terrain_set = 1
 3:2/0/terrain = 0
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5379,6 +5392,7 @@ texture = ExtResource("4_fgii8")
 3:2/0/physics_layer_3/angular_velocity = 0.0
 3:2/0/terrains_peering_bit/top_side = 0
 0:3/0 = 0
+0:3/0/y_sort_origin = 6
 0:3/0/terrain_set = 1
 0:3/0/terrain = 0
 0:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5391,6 +5405,7 @@ texture = ExtResource("4_fgii8")
 0:3/0/physics_layer_3/angular_velocity = 0.0
 0:3/0/terrains_peering_bit/right_side = 0
 1:3/0 = 0
+1:3/0/y_sort_origin = 6
 1:3/0/terrain_set = 1
 1:3/0/terrain = 0
 1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5404,6 +5419,7 @@ texture = ExtResource("4_fgii8")
 1:3/0/terrains_peering_bit/right_side = 0
 1:3/0/terrains_peering_bit/left_side = 0
 2:3/0 = 0
+2:3/0/y_sort_origin = 6
 2:3/0/terrain_set = 1
 2:3/0/terrain = 0
 2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -5416,6 +5432,7 @@ texture = ExtResource("4_fgii8")
 2:3/0/physics_layer_3/angular_velocity = 0.0
 2:3/0/terrains_peering_bit/left_side = 0
 3:3/0 = 0
+3:3/0/y_sort_origin = 6
 3:3/0/terrain_set = 1
 3:3/0/terrain = 0
 3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -8435,6 +8452,25 @@ texture = ExtResource("8_yjpxs")
 0:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_2/angular_velocity = 0.0
 0:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -24, 8, -24, 8, 8, -8, 8)
+0:0/0/physics_layer_3/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_3/angular_velocity = 0.0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3o02q"]
+texture = ExtResource("10_0e3je")
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/animation_columns = 3
+0:0/animation_frame_0/duration = 0.2
+0:0/animation_frame_1/duration = 0.2
+0:0/animation_frame_2/duration = 0.2
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 15)
+0:0/0/z_index = 3
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_1/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_1/angular_velocity = 0.0
+0:0/0/physics_layer_2/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_2/angular_velocity = 0.0
 0:0/0/physics_layer_3/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_3/angular_velocity = 0.0
 
@@ -11902,6 +11938,7 @@ sources/3 = SubResource("TileSetAtlasSource_ebpqa")
 sources/5 = SubResource("TileSetAtlasSource_ggoni")
 sources/2 = SubResource("TileSetAtlasSource_s6bdy")
 sources/4 = SubResource("TileSetAtlasSource_cksru")
+sources/6 = SubResource("TileSetAtlasSource_3o02q")
 
 [node name="GameManager" type="Node" node_paths=PackedStringArray("player")]
 process_mode = 3
@@ -11943,21 +11980,21 @@ layer_3/enabled = true
 layer_3/modulate = Color(1, 1, 1, 1)
 layer_3/y_sort_enabled = false
 layer_3/y_sort_origin = 0
-layer_3/z_index = 0
+layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(327687, 131074, 2, 262151, 131074, 1, 196615, 131074, 1, 131079, 131074, 0, 327686, 65538, 2, 262150, 65538, 1, 196614, 65538, 1, 131078, 65538, 0, 327685, 65538, 2, 262149, 65538, 1, 196613, 65538, 1, 131077, 65538, 0, 327684, 2, 2, 262148, 2, 1, 196612, 2, 1, 131076, 2, 0)
 layer_4/name = "Walls"
 layer_4/enabled = true
 layer_4/modulate = Color(1, 1, 1, 1)
 layer_4/y_sort_enabled = false
 layer_4/y_sort_origin = 0
-layer_4/z_index = 0
+layer_4/z_index = 2
 layer_4/tile_data = PackedInt32Array(131076, 1, 3, 131077, 65537, 3, 131078, 65537, 3, 131079, 131073, 0, 196615, 196609, 1, 262151, 196609, 1, 327687, 131073, 2, 327686, 65537, 3, 327685, 65537, 3, 327684, 1, 2, 262148, 196609, 0)
 layer_5/name = "Roof"
 layer_5/enabled = true
 layer_5/modulate = Color(1, 1, 1, 1)
 layer_5/y_sort_enabled = true
 layer_5/y_sort_origin = 0
-layer_5/z_index = 2
+layer_5/z_index = 3
 layer_5/tile_data = PackedInt32Array(131076, 3, 0, 131077, 65539, 0, 131078, 65539, 0, 131079, 131075, 0, 196615, 131075, 1, 262151, 131075, 1, 327687, 131075, 2, 327686, 65539, 2, 262150, 65539, 1, 196614, 65539, 1, 196613, 65539, 1, 262149, 65539, 1, 262148, 3, 1, 196612, 3, 1, 327685, 65539, 2, 327684, 3, 2)
 layer_6/name = "Items"
 layer_6/enabled = true
@@ -12000,7 +12037,6 @@ drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 
 [node name="Control" type="Control" parent="World/TileMap/Player"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.25, 0.25)
