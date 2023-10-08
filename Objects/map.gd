@@ -37,3 +37,9 @@ func remove_item(coords: Vector2i) -> int:
 	
 	erase_cell(LayerId.item, coords)
 	return tile_data.get_custom_data("item_id")
+
+func get_description(coords: Vector2i) -> String:
+	var tile_data = get_cell_tile_data(LayerId.descritable, coords)
+	if !tile_data:
+		return ""
+	return tile_data.get_custom_data("description")

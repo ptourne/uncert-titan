@@ -4,5 +4,6 @@ enum {
 	walls = 4,
 	roof = 5,
 	item = 6,
-	selector = 7,
+	descritable = 7,
+	selector = 8,
 }
