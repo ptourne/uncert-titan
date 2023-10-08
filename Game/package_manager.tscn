@@ -6,6 +6,7 @@
 [node name="PackageManager" type="Node2D"]
 script = ExtResource("1_jiy5o")
 right_up_pos = Vector2i(10, 10)
+time = 2e+07
 
 [node name="Package" type="Node2D" parent="."]
 script = ExtResource("2_rbnpn")
