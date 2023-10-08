@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cmrrhy57enq3j"]
+[gd_scene load_steps=17 format=3 uid="uid://cmrrhy57enq3j"]
 
 [ext_resource type="Texture2D" uid="uid://djqnnieyh8f8v" path="res://assets/UI/InGame/OnTopScreen/radar.png" id="1_bep8t"]
 [ext_resource type="Theme" uid="uid://beobcn5jamo8p" path="res://UI/ui__theme.tres" id="1_jwvoe"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://esw2d16mdilr" path="res://assets/UI/InGame/OnTopScreen/icono_energia.png" id="10_s1wxe"]
 [ext_resource type="Script" path="res://UI/InGame/text_assistant.gd" id="11_p0n8m"]
 [ext_resource type="Script" path="res://UI/InGame/popup.gd" id="12_05vv0"]
+[ext_resource type="Texture2D" uid="uid://htnlluegpmex" path="res://assets/UI/InGame/OnTopScreen/caja_de_item.png" id="13_fyqn5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taynb"]
 texture = ExtResource("2_xpg0j")
@@ -27,6 +28,13 @@ texture_margin_top = 8.0
 texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p2ssn"]
+texture = ExtResource("13_fyqn5")
+texture_margin_left = 10.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+
 [node name="InGame" type="Control" node_paths=PackedStringArray("label_assistant", "label_popup")]
 layout_mode = 3
 anchors_preset = 15
@@ -41,10 +49,10 @@ label_popup = NodePath("PopUpContainer/PopUp")
 
 [node name="AssistantFrame" type="PanelContainer" parent="."]
 layout_mode = 2
-offset_left = 1455.0
+offset_left = 1568.0
 offset_top = 67.0
-offset_right = 1967.0
-offset_bottom = 803.0
+offset_right = 1939.0
+offset_bottom = 662.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(0.8, 0.8)
@@ -69,7 +77,7 @@ expand_mode = 4
 [node name="Label" type="Label" parent="AssistantFrame/Margin/MainFrame"]
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
-text = "Base"
+text = "    Base"
 
 [node name="Indicators" type="VBoxContainer" parent="AssistantFrame/Margin/MainFrame"]
 layout_mode = 2
@@ -173,10 +181,10 @@ texture_progress = ExtResource("6_8fcp0")
 
 [node name="AssistanContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 1455.0
-offset_top = 661.0
-offset_right = 1865.0
-offset_bottom = 809.0
+offset_left = 1568.0
+offset_top = 553.0
+offset_right = 1866.0
+offset_bottom = 657.0
 
 [node name="Label" type="Label" parent="AssistanContainer"]
 custom_minimum_size = Vector2(10, 10)
@@ -198,3 +206,50 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("12_05vv0")
 container = NodePath("..")
+
+[node name="Inventory" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 968.0
+offset_right = 1368.0
+offset_bottom = 1064.0
+
+[node name="ItemSlot2" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2ssn")
+
+[node name="ItemSlot" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2ssn")
+
+[node name="ItemSlot3" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2ssn")
+
+[node name="ItemSlot4" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2ssn")
+
+[node name="ItemSlot5" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2ssn")
+
+[node name="ItemSlot6" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2ssn")
+
+[node name="ItemSlot7" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2ssn")
+
+[node name="ItemSlot8" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(96, 96)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_p2ssn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5ocxcc8g673r"]
 
 [ext_resource type="Theme" uid="uid://beobcn5jamo8p" path="res://UI/ui__theme.tres" id="1_6gyu5"]
-[ext_resource type="Texture2D" uid="uid://dgx3yjk13bp4e" path="res://UI/StartMenu/background.png" id="1_prqcx"]
+[ext_resource type="Texture2D" uid="uid://djnhsvepgwvjx" path="res://assets/UI/Menu/menu_background.png" id="2_wrkc5"]
 
 [sub_resource type="GDScript" id="GDScript_xr34l"]
 script/source = "extends Control
@@ -33,31 +33,31 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_prqcx")
+texture = ExtResource("2_wrkc5")
 stretch_mode = 6
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_right = 434.0
 grow_vertical = 2
+theme_override_constants/margin_left = 110
+theme_override_constants/margin_top = 380
 
-[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer"]
 layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 30
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer"]
-layout_mode = 2
-
-[node name="StartButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="StartButton" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
 text = "COMENZAR"
 
-[node name="QuitButton" type="Button" parent="CenterContainer/PanelContainer/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "SALIR"
 
-[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="CenterContainer/PanelContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

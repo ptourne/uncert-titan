@@ -7,6 +7,7 @@ signal energy_change(new_level)
 signal oxigen_change(new_level)
 
 @onready var tile_map: Map = $".."
+@onready var graphics = $Graphics
 
 @export var game_manager : GameManager
 @export var base: Base
@@ -34,15 +35,43 @@ var oxigen : int = MAX_OXIGEN_LEVEL
 var energy : int = MAX_ENERGY_LEVEL
 var is_on_space_suit = false
 var in_base = false
+var facing_direction = [1,1]
 
 func _ready():
 	set_energy(MAX_ENERGY_LEVEL)
 	set_oxigen(MAX_OXIGEN_LEVEL)
 	
 func _process(delta):
-	pass
+	if velocity.y > 0:
+		set_vertical_facing_direction_down()
+	if velocity.y < 0:
+		set_vertical_facing_direction_up()
+	if velocity.x > 0:
+		set_horizontal_facing_direction_right()
+	if velocity.x < 0:
+		set_horizontal_facing_direction_left()
+
+func update_facing_direction():
+	graphics.frame = facing_direction[0] + 2*facing_direction[1]
+	
+func set_vertical_facing_direction_up():
+	facing_direction[1] = 1
+	update_facing_direction()
+	
+func set_vertical_facing_direction_down():
+	facing_direction[1] = 0
+	update_facing_direction()
+	
+func set_horizontal_facing_direction_right():
+	facing_direction[0] = 0
+	update_facing_direction()
+	
+func set_horizontal_facing_direction_left():
+	facing_direction[0] = 1
+	update_facing_direction()
 	
 func is_running():
+	set_vertical_facing_direction_down()
 	return running
 
 func max_speed():
