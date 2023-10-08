@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cmrrhy57enq3j"]
+[gd_scene load_steps=19 format=3 uid="uid://cmrrhy57enq3j"]
 
 [ext_resource type="Theme" uid="uid://c7w5afy45j5ct" path="res://UI/ingame__theme.tres" id="1_5vcbt"]
 [ext_resource type="Texture2D" uid="uid://djqnnieyh8f8v" path="res://assets/UI/InGame/OnTopScreen/radar.png" id="1_bep8t"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://UI/InGame/text_assistant.gd" id="11_p0n8m"]
 [ext_resource type="FontFile" uid="uid://er2636s3urj3" path="res://assets/Text/Inside_game_font.ttf" id="12_1wtmf"]
 [ext_resource type="Script" path="res://UI/InGame/popup.gd" id="12_05vv0"]
+[ext_resource type="Texture2D" uid="uid://bvxbcq4arych" path="res://assets/UI/InGame/OnTopScreen/icono_temperatura.png" id="12_hoyro"]
 [ext_resource type="Texture2D" uid="uid://htnlluegpmex" path="res://assets/UI/InGame/OnTopScreen/caja_de_item.png" id="13_fyqn5"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_taynb"]
@@ -189,10 +190,11 @@ layout_mode = 2
 
 [node name="Icon" type="TextureRect" parent="SuitFrame/Margin/Stats/Indicators/Temp"]
 layout_mode = 2
-texture = ExtResource("10_s1wxe")
+texture = ExtResource("12_hoyro")
 
 [node name="ProgressBar" type="TextureProgressBar" parent="SuitFrame/Margin/Stats/Indicators/Temp"]
 layout_mode = 2
+value = 67.0
 stretch_margin_left = 24
 stretch_margin_top = 24
 stretch_margin_right = 24
