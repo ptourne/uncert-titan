@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://c554rdx5sfkqi"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_7cth1"]
-[ext_resource type="Texture2D" uid="uid://bf4wejdf3wm54" path="res://assets/Player/player.png" id="2_ua3rn"]
+[ext_resource type="Texture2D" uid="uid://51jcm03r5tpg" path="res://assets/Player/main_character_tilesheet.png" id="2_7ymn3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sxwo7"]
 radius = 3.0
@@ -24,8 +24,8 @@ script = ExtResource("1_7cth1")
 
 [node name="Graphics" type="Sprite2D" parent="."]
 position = Vector2(0, -5)
-texture = ExtResource("2_ua3rn")
-vframes = 4
+texture = ExtResource("2_7ymn3")
+hframes = 8
 
 [node name="HitBox" type="CollisionShape2D" parent="."]
 rotation = -1.5708
@@ -66,6 +66,10 @@ collision_mask = 128
 position = Vector2(0, -3.255)
 shape = SubResource("CircleShape2D_8v3wl")
 
+[node name="WalkingTimer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
 [connection signal="body_shape_entered" from="TileDetector" to="." method="_on_tile_detector_body_shape_entered"]
 [connection signal="body_shape_exited" from="TileDetector" to="." method="_on_tile_detector_body_shape_exited"]
 [connection signal="timeout" from="BreadingTimer" to="." method="_on_breading_timer_timeout"]
@@ -74,3 +78,4 @@ shape = SubResource("CircleShape2D_8v3wl")
 [connection signal="body_shape_entered" from="Area2D" to="." method="_pick_up_item"]
 [connection signal="body_shape_entered" from="Area2D2" to="." method="_interact_descriptable"]
 [connection signal="body_shape_exited" from="Area2D2" to="." method="_hide_descriptable"]
+[connection signal="timeout" from="WalkingTimer" to="." method="_step"]

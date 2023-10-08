@@ -1,7 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cmrrhy57enq3j"]
+[gd_scene load_steps=18 format=3 uid="uid://cmrrhy57enq3j"]
 
+[ext_resource type="Theme" uid="uid://c7w5afy45j5ct" path="res://UI/ingame__theme.tres" id="1_5vcbt"]
 [ext_resource type="Texture2D" uid="uid://djqnnieyh8f8v" path="res://assets/UI/InGame/OnTopScreen/radar.png" id="1_bep8t"]
-[ext_resource type="Theme" uid="uid://beobcn5jamo8p" path="res://UI/ui__theme.tres" id="1_jwvoe"]
 [ext_resource type="Texture2D" uid="uid://c3jie3ys08h7n" path="res://assets/UI/InGame/OnTopScreen/icono_oxigeno.png" id="1_sn0rp"]
 [ext_resource type="Texture2D" uid="uid://2xgvmkrklucn" path="res://assets/UI/InGame/OnTopScreen/assistant_frame.png" id="2_xpg0j"]
 [ext_resource type="Script" path="res://UI/InGame/in_game_ui.gd" id="2_yrifr"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://UI/InGame/suit_frame.gd" id="9_q4i2x"]
 [ext_resource type="Texture2D" uid="uid://esw2d16mdilr" path="res://assets/UI/InGame/OnTopScreen/icono_energia.png" id="10_s1wxe"]
 [ext_resource type="Script" path="res://UI/InGame/text_assistant.gd" id="11_p0n8m"]
+[ext_resource type="FontFile" uid="uid://er2636s3urj3" path="res://assets/Text/Inside_game_font.ttf" id="12_1wtmf"]
 [ext_resource type="Script" path="res://UI/InGame/popup.gd" id="12_05vv0"]
 [ext_resource type="Texture2D" uid="uid://htnlluegpmex" path="res://assets/UI/InGame/OnTopScreen/caja_de_item.png" id="13_fyqn5"]
 
@@ -42,7 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_jwvoe")
+theme = ExtResource("1_5vcbt")
 script = ExtResource("2_yrifr")
 label_assistant = NodePath("AssistanContainer/Label")
 label_popup = NodePath("PopUpContainer/PopUp")
@@ -202,8 +203,12 @@ offset_bottom = 456.0
 
 [node name="PopUp" type="Label" parent="PopUpContainer" node_paths=PackedStringArray("container")]
 layout_mode = 2
+theme_type_variation = &"HeaderMedium"
+theme_override_fonts/font = ExtResource("12_1wtmf")
+theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 script = ExtResource("12_05vv0")
 container = NodePath("..")
 

@@ -36,6 +36,7 @@ var energy : int = MAX_ENERGY_LEVEL
 var is_on_space_suit = false
 var in_base = false
 var facing_direction = [1,1]
+var step = 0
 
 func _ready():
 	set_energy(MAX_ENERGY_LEVEL)
@@ -52,7 +53,7 @@ func _process(delta):
 		set_horizontal_facing_direction_left()
 
 func update_facing_direction():
-	graphics.frame = facing_direction[0] + 2*facing_direction[1]
+	graphics.frame = 2*facing_direction[0] + 4*facing_direction[1] + step
 	
 func set_vertical_facing_direction_up():
 	facing_direction[1] = 1
@@ -184,3 +185,15 @@ func set_oxigen(amount):
 
 func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	pass # Replace with function body.
+
+
+func _step():
+	if velocity.length() >= 0.1:
+		make_step()
+
+func make_step():
+	if step == 1:
+		step = 0
+	else:
+		step = 1
+	update_facing_direction()

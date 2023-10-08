@@ -27,7 +27,7 @@ func place_tile(layer: int, tile_set: int, coord: Vector2i, coord_tile: Vector2i
 func place_windmill(coords: Vector2i) -> bool:
 	if get_cell_tile_data(LayerId.walls, coords):
 		return false
-	set_cells_terrain_connect(LayerId.walls, [coords], 1, 0)
+	set_cell(LayerId.walls, coords, 6, Vector2i.ZERO, 0)
 	return true
 
 func remove_item(coords: Vector2i) -> int:
