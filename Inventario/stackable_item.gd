@@ -10,7 +10,7 @@ static func init() -> StackableItem:
 	item.item_count = 1
 	return item
 
-func could_append(item: ItemId) -> bool:
+func could_append(item: int) -> bool:
 	if item != self.id:
 		return false
 	

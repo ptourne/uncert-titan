@@ -2,9 +2,9 @@ extends Node
 
 class_name Item
 
-var id: ItemId
+var id: int
 
-func could_append(item: ItemId) -> bool:
+func could_append(item: int) -> bool:
 	return false
 
 func remove() -> bool:
