@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbyjjea57t8dw"
+path="res://.godot/imported/10-But do not worry. you can be as creative as you want.wav-b745d152cd9eec5a775a4aa657173acf.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Trailer/10-But do not worry. you can be as creative as you want.wav"
+dest_files=["res://.godot/imported/10-But do not worry. you can be as creative as you want.wav-b745d152cd9eec5a775a4aa657173acf.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://btsinl33tsw4o"
+path="res://.godot/imported/6-A thousand years after the las time someone tried to.wav-6d0e16c609f76ca742e363c38404b08c.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Trailer/6-A thousand years after the las time someone tried to.wav"
+dest_files=["res://.godot/imported/6-A thousand years after the las time someone tried to.wav-6d0e16c609f76ca742e363c38404b08c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

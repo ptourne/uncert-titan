@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bed40g42ppl8t"
+path="res://.godot/imported/3-trapped in a random crater on titan.wav-d580ca11b0daee9f06a1d2595b2af631.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Trailer/3-trapped in a random crater on titan.wav"
+dest_files=["res://.godot/imported/3-trapped in a random crater on titan.wav-d580ca11b0daee9f06a1d2595b2af631.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
