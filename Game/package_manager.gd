@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 @export var deploy_manager: DeployManager
 
@@ -8,7 +8,7 @@ extends Node2D
 @export var time: float
 
 var timer: Timer
-var scene
+var package_loader
 
 var landing_points
 
@@ -17,16 +17,14 @@ func _ready():
 	add_child(timer)
 	landing_points = []
 	
-	self.scene = load("res://PreFabs/package.tscn")
+	self.package_loader = load("res://PreFabs/package.tscn")
 	
 	timer.timeout.connect(create_package)
 	timer.start(self.time)
 
 func create_package():
-	print("Generando")
-	var package = scene.instantiate()
+	var package = package_loader.instantiate()
 	add_child(package)
-	
 
 	var random_gen = RandomNumberGenerator.new()
 	

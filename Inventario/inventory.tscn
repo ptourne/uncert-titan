@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d31kqhwa526qr"]
+
+[ext_resource type="Script" path="res://Inventario/inventory.gd" id="1_61gvo"]
+
+[node name="Inventory" type="Node"]
+script = ExtResource("1_61gvo")
+max_item = 9
