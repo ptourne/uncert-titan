@@ -12,6 +12,7 @@ signal oxigen_change(new_level)
 @export var base: Base
 @export var inventory: Inventory
 @export var send_message: SendMessage
+@export var send_despcription: Descriptable
 
 const WALKING_ACCELERATION = 600
 const RUNNIN_ACCELERATION = 1000
@@ -94,6 +95,14 @@ func _pick_up_item(body_rid, body: TileMap, body_shape_index, local_shape_index)
 	if item_id >= 0:
 		self.inventory.add_item(item_id)
 
+func _interact_descriptable(body_rid, body: TileMap, body_shape_index, local_shape_index):
+	var position = body.get_coords_for_body_rid(body_rid)
+	var description = "ey"
+	self.send_despcription.emit_description(description)
+
+func _hide_descriptable(body_rid, body, body_shape_index, local_shape_index):
+	self.send_despcription.emit_hide()
+
 func _on_tile_detector_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
 	_handle_under_roof(body_rid, body)
 	
@@ -138,3 +147,7 @@ func set_energy(amount):
 func set_oxigen(amount):
 	oxigen = amount
 	oxigen_change.emit(amount)
+
+
+func _on_area_2d_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	pass # Replace with function body.
