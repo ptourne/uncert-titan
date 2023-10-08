@@ -1,7 +1,6 @@
 extends Node
 
 @export var deploy_manager: DeployManager
-@export var tile_map: TileMap
 
 @export var left_down_pos: Vector2i
 @export var right_up_pos: Vector2i

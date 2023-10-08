@@ -26,7 +26,6 @@ func add_item(item: int) -> bool:
 			continue
 			
 		inventory[i] = ItemId.get_item_from_id(item)
-		print("Append item")
 		break
 	
 	return false
