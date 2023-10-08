@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cmrrhy57enq3j"]
+[gd_scene load_steps=18 format=3 uid="uid://cmrrhy57enq3j"]
 
 [ext_resource type="Theme" uid="uid://c7w5afy45j5ct" path="res://UI/ingame__theme.tres" id="1_5vcbt"]
 [ext_resource type="Texture2D" uid="uid://djqnnieyh8f8v" path="res://assets/UI/InGame/OnTopScreen/radar.png" id="1_bep8t"]
