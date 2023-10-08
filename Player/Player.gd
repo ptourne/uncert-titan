@@ -11,6 +11,7 @@ signal oxigen_change(new_level)
 @export var game_manager : GameManager
 @export var base: Base
 @export var inventory: Inventory
+@export var send_message: SendMessage
 
 const WALKING_ACCELERATION = 600
 const RUNNIN_ACCELERATION = 1000
@@ -82,6 +83,9 @@ func _input(event):
 
 	if event.is_action_released("ui_run"):
 		running = false
+	
+	if event.is_action_pressed("SendText"):
+		self.send_message.send_message("hola")
 
 func _pick_up_item(body_rid, body: TileMap, body_shape_index, local_shape_index):
 	var position = body.get_coords_for_body_rid(body_rid)

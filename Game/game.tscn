@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=30 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
@@ -18,6 +18,8 @@
 [ext_resource type="Script" path="res://Game/deploy_manager.gd" id="13_1mapw"]
 [ext_resource type="PackedScene" uid="uid://cmrrhy57enq3j" path="res://UI/InGame/in_game.tscn" id="13_h7t0j"]
 [ext_resource type="PackedScene" uid="uid://d31kqhwa526qr" path="res://Inventario/inventory.tscn" id="15_pry1f"]
+[ext_resource type="Script" path="res://Player/send_message.gd" id="16_cmsbw"]
+[ext_resource type="Script" path="res://Game/assistant_manager.gd" id="19_okgvf"]
 
 [sub_resource type="GDScript" id="GDScript_af865"]
 script/source = "extends Node2D
@@ -9124,11 +9126,12 @@ layer_7/z_index = 0
 layer_7/tile_data = PackedInt32Array()
 script = ExtResource("9_r7det")
 
-[node name="Player" parent="World/TileMap" node_paths=PackedStringArray("game_manager", "base", "inventory") instance=ExtResource("4_oank5")]
+[node name="Player" parent="World/TileMap" node_paths=PackedStringArray("game_manager", "base", "inventory", "send_message") instance=ExtResource("4_oank5")]
 position = Vector2(78, -4)
 game_manager = NodePath("../../..")
 base = NodePath("../../Base")
 inventory = NodePath("Inventory")
+send_message = NodePath("SendMessage")
 
 [node name="Camera2D" type="Camera2D" parent="World/TileMap/Player"]
 zoom = Vector2(4, 4)
@@ -9152,7 +9155,7 @@ game_manager = NodePath("../../../../..")
 layout_mode = 1
 game_manager = NodePath("../../../../..")
 
-[node name="InGame" parent="World/TileMap/Player/Control" node_paths=PackedStringArray("base", "player") instance=ExtResource("13_h7t0j")]
+[node name="InGame" parent="World/TileMap/Player/Control" node_paths=PackedStringArray("base", "player", "assistant_manager") instance=ExtResource("13_h7t0j")]
 layout_mode = 1
 offset_left = -960.0
 offset_top = -540.0
@@ -9160,8 +9163,13 @@ offset_right = -960.0
 offset_bottom = -540.0
 base = NodePath("../../../../Base")
 player = NodePath("../..")
+assistant_manager = NodePath("../../../../../AssistantManager")
 
 [node name="Inventory" parent="World/TileMap/Player" instance=ExtResource("15_pry1f")]
+
+[node name="SendMessage" type="Node" parent="World/TileMap/Player" node_paths=PackedStringArray("assistant_manager")]
+script = ExtResource("16_cmsbw")
+assistant_manager = NodePath("../../../../AssistantManager")
 
 [node name="Base" parent="World" instance=ExtResource("11_t1eoa")]
 
@@ -9170,3 +9178,6 @@ player = NodePath("../..")
 [node name="ItemManager" parent="World" node_paths=PackedStringArray("deploy_manager") instance=ExtResource("12_883x1")]
 deploy_manager = NodePath("../../DeployManager")
 time = 1.0
+
+[node name="AssistantManager" type="Node" parent="."]
+script = ExtResource("19_okgvf")
