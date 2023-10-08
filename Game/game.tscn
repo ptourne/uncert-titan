@@ -11958,7 +11958,6 @@ drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 
 [node name="Control" type="Control" parent="World/TileMap/Player"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.25, 0.25)
