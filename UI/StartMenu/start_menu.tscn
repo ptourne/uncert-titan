@@ -53,11 +53,11 @@ theme_override_constants/separation = 30
 [node name="StartButton" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
-text = "COMENZAR"
+text = "START"
 
 [node name="QuitButton" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "SALIR"
+text = "QUIT"
 
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
