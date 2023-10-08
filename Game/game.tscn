@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://d3tjnva040ldl"]
+[gd_scene load_steps=29 format=3 uid="uid://d3tjnva040ldl"]
 
 [ext_resource type="Texture2D" uid="uid://dhh5bu7vi470c" path="res://assets/Tilesets/TilesetFloor.png" id="1_spn7i"]
 [ext_resource type="Script" path="res://Game/game.gd" id="1_vsshf"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ctp201hcv0v8r" path="res://UI/DieMenu/die_menu.tscn" id="10_17u5c"]
 [ext_resource type="PackedScene" uid="uid://bts2efj2aei60" path="res://Objects/base.tscn" id="11_t1eoa"]
 [ext_resource type="PackedScene" uid="uid://3esbeagvyup2" path="res://Game/package_manager.tscn" id="12_883x1"]
+[ext_resource type="Texture2D" uid="uid://1mokxyudrtfb" path="res://assets/UI/InGame/FogOverlay.png" id="12_wwloo"]
 [ext_resource type="PackedScene" uid="uid://bmtf3drba0g5v" path="res://Game/generator_colocator.tscn" id="12_xdehd"]
 [ext_resource type="Script" path="res://Game/deploy_manager.gd" id="13_1mapw"]
 [ext_resource type="PackedScene" uid="uid://cmrrhy57enq3j" path="res://UI/InGame/in_game.tscn" id="13_h7t0j"]
@@ -9143,6 +9144,19 @@ drag_bottom_margin = 0.1
 layout_mode = 3
 anchors_preset = 0
 scale = Vector2(0.25, 0.25)
+
+[node name="TextureRect" type="TextureRect" parent="World/TileMap/Player/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+offset_top = -540.0
+offset_right = 960.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_wwloo")
 
 [node name="PauseMenu" parent="World/TileMap/Player/Control" node_paths=PackedStringArray("game_manager") instance=ExtResource("6_edt4b")]
 layout_mode = 1
