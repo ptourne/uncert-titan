@@ -56,8 +56,30 @@ size_flags_vertical = 10
 text = "START"
 
 [node name="QuitButton" type="Button" parent="TextureRect/MarginContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "QUIT"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -444.0
+offset_top = -139.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+text = "ALPHA-1.0"
 
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="TextureRect/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

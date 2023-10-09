@@ -34,6 +34,8 @@ func ask_oxigen(cuantity):
 	return oxigen_to_give
 
 func recieve_energy(amount):
+	# TEMPORAL
+	set_oxigen(oxigen + min(MAX_OXIGEN - oxigen, amount))
 	set_energy(energy + min(MAX_ENERGY - energy, amount))
 
 func set_energy(amount):

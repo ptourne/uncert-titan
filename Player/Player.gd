@@ -27,8 +27,8 @@ const MAX_OXIGEN_TRANSFER_SPEED = 5
 const MAX_ENERGY_LEVEL = 100
 const MAX_ENERGY_TRANSFER_SPEED = 5
 
-const OX_COST_PER_VELOCITY = 0.1
-const OX_COST_BASE = 0.01
+const OX_COST_PER_VELOCITY = 0.01
+const OX_COST_BASE = 0.005
 
 var running = false
 var oxigen : int = MAX_OXIGEN_LEVEL
