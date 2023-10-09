@@ -205,7 +205,7 @@ texture_progress = ExtResource("6_8fcp0")
 
 [node name="AssistanContainer" type="PanelContainer" parent="."]
 layout_mode = 0
-offset_left = 1568.0
+offset_left = 1365.0
 offset_top = 553.0
 offset_right = 1866.0
 offset_bottom = 657.0
@@ -215,6 +215,7 @@ custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 2
 script = ExtResource("11_p0n8m")
 
 [node name="PopUpContainer" type="PanelContainer" parent="."]

@@ -116,7 +116,7 @@ func _input(event):
 		running = false
 	
 	if event.is_action_pressed("SendText"):
-		self.send_message.send_message("hola")
+		self.send_message.send_message("Hola tanto tiempo")
 
 func _pick_up_item(body_rid, body: TileMap, body_shape_index, local_shape_index):
 	var position = body.get_coords_for_body_rid(body_rid)
