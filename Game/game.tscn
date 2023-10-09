@@ -12631,7 +12631,6 @@ drag_right_margin = 0.1
 drag_bottom_margin = 0.1
 
 [node name="Control" type="Control" parent="World/TileMap/Player"]
-visible = false
 z_index = 19
 layout_mode = 3
 anchors_preset = 0
